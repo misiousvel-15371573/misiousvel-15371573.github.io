@@ -1,0 +1,1491 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>白金刊第33刊无圣光套图 - 摄影刊物套图与创作档案</title>
+  <meta name="description" content="白金刊第33刊无圣光套图收录本期完整套图与创作背景，包括棚拍原片、花絮、模特访谈和器材清单。适合关注无圣光摄影风格与数字套图内容的读者查阅。">
+  <meta name="keywords" content="白金刊第33刊无圣光套图">
+  <style>
+    /* 色彩与变量系统 */
+    :root {
+      --primary: #9b7b5c;          /* 暖棕，呼应纸刊与摄影质感 */
+      --primary-light: #cbb59d;
+      --primary-dark: #6d5541;
+      --bg: #faf8f5;
+      --panel: #ffffff;
+      --text-primary: #2a2520;
+      --text-secondary: #5e554c;
+      --text-tertiary: #8e847b;
+      --border: #e3ddd6;
+      --radius-card: 16px;
+      --radius-btn: 32px;
+      --radius-tag: 20px;
+      --radius-banner: 20px;
+      --shadow-default: 0 6px 18px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 14px 28px rgba(0, 0, 0, 0.08);
+      --font-base: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+      --transition: all 0.2s ease;
+      --header-height: 64px;
+      --announce-height: 40px;
+      --sticky-offset: calc(var(--announce-height) + var(--header-height));
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--sticky-offset);
+    }
+
+    body {
+      font-family: var(--font-base);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* 吸顶公告条 */
+    .announce-bar {
+      background: var(--primary-dark);
+      color: #fff;
+      font-size: 0.85rem;
+      height: var(--announce-height);
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      white-space: nowrap;
+      overflow-x: auto;
+      gap: 2rem;
+      scrollbar-width: thin;
+    }
+    .announce-bar .brand-tag {
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--primary-light);
+    }
+    .announce-bar .announce-items {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .announce-bar .announce-items span::before {
+      content: "·";
+      margin-right: 0.5rem;
+      color: var(--primary-light);
+    }
+    .announce-bar .announce-items span:first-child::before {
+      display: none;
+    }
+
+    /* 吸顶页头 */
+    .site-header {
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: var(--announce-height);
+      z-index: 99;
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
+      gap: 2rem;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-shrink: 0;
+    }
+    .logo-icon svg {
+      width: 28px;
+      height: 28px;
+      display: block;
+    }
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      color: var(--primary-dark);
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 1.6rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .main-nav::-webkit-scrollbar {
+      display: none;
+    }
+    .main-nav a {
+      color: var(--text-secondary);
+      transition: var(--transition);
+      white-space: nowrap;
+      padding: 0.25rem 0;
+      border-bottom: 2px solid transparent;
+    }
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+      color: var(--primary-dark);
+      border-bottom-color: var(--primary);
+      outline: none;
+    }
+    .header-actions {
+      margin-left: auto;
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+    }
+    .icon-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      padding: 0.35rem 1rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .icon-btn:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary-dark);
+    }
+    .mobile-menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.4rem 0.7rem;
+      font-size: 1.3rem;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--text-primary);
+    }
+
+    /* 主容器 – 三栏布局 */
+    .main-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem 2rem 4rem;
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr) 260px;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* 左频道索引 */
+    .channel-sidebar {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 1rem);
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 1.2rem 0.8rem;
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--border);
+    }
+    .channel-sidebar h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-tertiary);
+      margin-bottom: 1rem;
+      padding-left: 0.5rem;
+    }
+    .channel-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .channel-list a {
+      display: block;
+      padding: 0.55rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      transition: var(--transition);
+      font-weight: 500;
+    }
+    .channel-list a:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    /* 中主内容区 */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    /* 首屏 hero */
+    .hero-section {
+      background: linear-gradient(135deg, #f5efe8 0%, #e8ded2 100%);
+      border-radius: var(--radius-banner);
+      padding: 2.5rem 2.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-default);
+    }
+    .hero-text {
+      flex: 1 1 300px;
+      z-index: 2;
+    }
+    .hero-text h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.01em;
+    }
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 520px;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.8rem;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--primary);
+      color: var(--primary-dark);
+      padding: 0.7rem 1.8rem;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-outline:hover {
+      background: var(--primary-light);
+      border-color: var(--primary-dark);
+    }
+    .hero-visual {
+      flex: 0 1 260px;
+      text-align: center;
+      z-index: 1;
+    }
+    .hero-visual svg {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.06));
+    }
+
+    /* 通用板块样式 */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+    }
+    .section-title small {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--text-tertiary);
+    }
+
+    /* 主题领域概览 */
+    .overview-text {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 1.8rem 2rem;
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--border);
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+    .card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      background: #e0d9d2;
+    }
+    .card-body {
+      padding: 1rem 1rem 1.2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.2rem 0;
+    }
+    .tag {
+      font-size: 0.7rem;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 0.15rem 0.6rem;
+      border-radius: var(--radius-tag);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-meta {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      margin-top: 0.3rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* 最新更新列表 */
+    .update-list {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-default);
+      padding: 0.5rem 0;
+    }
+    .update-item {
+      display: flex;
+      align-items: baseline;
+      padding: 0.8rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      gap: 1rem;
+      font-size: 0.92rem;
+    }
+    .update-item:last-child {
+      border-bottom: none;
+    }
+    .update-item .name {
+      font-weight: 600;
+      color: var(--text-primary);
+      min-width: 110px;
+    }
+    .update-item .summary {
+      color: var(--text-secondary);
+      flex: 1;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.8rem;
+    }
+    .category-item {
+      background: var(--panel);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 1rem 0.8rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-default);
+    }
+    .category-item:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-color: var(--primary);
+    }
+
+    /* 深度解析 */
+    .deep-dive {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 2rem 2.2rem;
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--border);
+    }
+    .deep-dive h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 1.6rem 0 0.6rem;
+      color: var(--primary-dark);
+    }
+    .deep-dive h3:first-of-type {
+      margin-top: 0;
+    }
+    .deep-dive p, .deep-dive li {
+      font-size: 0.97rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 0.6rem;
+    }
+    .deep-dive ul {
+      padding-left: 1.4rem;
+      margin: 0.6rem 0;
+    }
+
+    /* 体验指南 */
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      counter-reset: step;
+    }
+    .guide-step {
+      background: var(--panel);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 1rem 1.5rem 1rem 3rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      box-shadow: var(--shadow-default);
+      counter-increment: step;
+    }
+    .guide-step::before {
+      content: counter(step);
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      width: 24px;
+      height: 24px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    /* FAQ */
+    .faq-list details {
+      background: var(--panel);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 0.8rem 1.5rem;
+      margin-bottom: 0.6rem;
+      box-shadow: var(--shadow-default);
+    }
+    .faq-list summary {
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text-primary);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-list summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq-list summary::after {
+      content: "+";
+      font-size: 1.4rem;
+      color: var(--primary);
+      font-weight: 400;
+    }
+    .faq-list details[open] summary::after {
+      content: "−";
+    }
+    .faq-list p {
+      margin-top: 0.8rem;
+      font-size: 0.93rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* 用户评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+    .comment-item {
+      background: var(--panel);
+      border-radius: 12px;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--border);
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      box-shadow: var(--shadow-default);
+    }
+    .comment-user {
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.2rem;
+      font-size: 0.8rem;
+    }
+
+    /* 相关资讯 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .news-item {
+      background: var(--panel);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-default);
+    }
+    .news-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      display: flex;
+      gap: 0.8rem;
+      align-items: baseline;
+    }
+    .news-date {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+    }
+    .news-summary {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 0.3rem;
+      line-height: 1.6;
+    }
+
+    /* 相关推荐 标签索引 */
+    .related-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .related-tags a {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-tag);
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      transition: var(--transition);
+      box-shadow: var(--shadow-default);
+    }
+    .related-tags a:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-color: var(--primary);
+    }
+
+    /* 右侧辅助栏 */
+    .right-sidebar {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 1rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .sidebar-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      padding: 1.2rem 1.2rem 1.5rem;
+      box-shadow: var(--shadow-default);
+    }
+    .sidebar-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .rank-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .rank-item {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      font-size: 0.88rem;
+    }
+    .rank-num {
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 0.9rem;
+      min-width: 22px;
+    }
+    .rank-text {
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+    .rank-text strong {
+      color: var(--text-primary);
+      display: block;
+    }
+
+    /* 页尾 */
+    .site-footer {
+      background: #2d2823;
+      color: #b9aea3;
+      padding: 3rem 2rem 1.5rem;
+      margin-top: 2rem;
+    }
+    .footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2rem;
+    }
+    .footer-brand h3 {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+    .footer-brand p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: #b9aea3;
+      max-width: 320px;
+    }
+    .footer-col h4 {
+      color: #e8ded2;
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.85rem;
+      color: #b9aea3;
+      margin-bottom: 0.5rem;
+      transition: var(--transition);
+    }
+    .footer-col a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 2rem auto 0;
+      padding-top: 1.2rem;
+      border-top: 1px solid #4a4038;
+      font-size: 0.75rem;
+      color: #8e847b;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-hover);
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .back-to-top:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* 移动端遮罩 */
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 90;
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .main-container {
+        grid-template-columns: 1fr 240px;
+        gap: 1.5rem;
+      }
+      .channel-sidebar {
+        display: none;
+      }
+      .main-nav {
+        display: none;
+      }
+      .mobile-menu-toggle {
+        display: block;
+      }
+      .site-header {
+        padding: 0 1.2rem;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .main-container {
+        grid-template-columns: 1fr;
+        padding: 1rem 1rem 3rem;
+      }
+      .right-sidebar {
+        position: static;
+      }
+      .hero-section {
+        padding: 1.8rem 1.5rem;
+      }
+      .hero-text h1 {
+        font-size: 1.8rem;
+      }
+      .comment-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+      .announce-bar {
+        font-size: 0.75rem;
+        padding: 0 1rem;
+        gap: 1rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announce-bar" id="announce-bar">
+    <span class="brand-tag">白金刊第33刊无圣光套图</span>
+    <div class="announce-items">
+      <span>11月6日 更新「棚拍原片·无圣光版」12张</span>
+      <span>11月4日 新增「花絮侧拍」视频3段</span>
+      <span>11月2日 发布「模特林溪访谈」全文</span>
+    </div>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header" id="site-header">
+    <div class="logo-area">
+      <div class="logo-icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="6" width="24" height="18" rx="3" fill="#9B7B5C" />
+          <circle cx="14" cy="14" r="5" fill="#FAF8F5" />
+          <circle cx="14" cy="14" r="2.5" fill="#6D5541" />
+          <rect x="6" y="3" width="16" height="3" rx="1.5" fill="#CBB59D" />
+        </svg>
+      </div>
+      <span class="logo-text">白金刊第33刊无圣光套图</span>
+    </div>
+    <nav class="main-nav" aria-label="主题导航">
+      <a href="#overview">概览</a>
+      <a href="#featured">精选套图</a>
+      <a href="#updates">最新更新</a>
+      <a href="#categories">分类入口</a>
+      <a href="#deep-dive">深度解析</a>
+      <a href="#guide">体验指南</a>
+      <a href="#faq">常见问题</a>
+      <a href="#comments">用户评论</a>
+      <a href="#news">相关资讯</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="search-btn" aria-label="搜索内容">搜索</button>
+      <button class="icon-btn" id="submit-btn" aria-label="投稿入口">投稿</button>
+      <button class="mobile-menu-toggle" id="menu-toggle" aria-label="打开菜单">☰</button>
+    </div>
+  </header>
+
+  <!-- 移动端遮罩 -->
+  <div class="menu-overlay" id="menu-overlay"></div>
+
+  <!-- 主容器：三栏布局 -->
+  <div class="main-container">
+
+    <!-- 左侧频道索引 -->
+    <aside class="channel-sidebar" id="channel-sidebar">
+      <h3>频道索引</h3>
+      <ul class="channel-list">
+        <li><a href="#overview">套图概览</a></li>
+        <li><a href="#featured">棚拍原片</a></li>
+        <li><a href="#featured">花絮侧拍</a></li>
+        <li><a href="#featured">模特访谈</a></li>
+        <li><a href="#featured">器材清单</a></li>
+        <li><a href="#updates">更新动态</a></li>
+        <li><a href="#categories">分类检索</a></li>
+        <li><a href="#deep-dive">光位解析</a></li>
+        <li><a href="#guide">观看顺序</a></li>
+        <li><a href="#comments">读者短评</a></li>
+        <li><a href="#news">刊物资讯</a></li>
+        <li><a href="#related">相关推荐</a></li>
+      </ul>
+    </aside>
+
+    <!-- 中主内容区 -->
+    <main class="main-content">
+
+      <!-- 主题首屏 -->
+      <section class="hero-section" id="hero">
+        <div class="hero-text">
+          <h1>白金刊第33刊无圣光套图</h1>
+          <p class="hero-desc">
+            本期收录棚拍原片、花絮侧拍与模特访谈，全部采用无圣光布光方案。从灯位图到现场录音，完整呈现一套数字摄影刊物的制作细节。
+          </p>
+          <div class="hero-actions">
+            <a href="#featured" class="btn-primary">浏览套图</a>
+            <a href="#deep-dive" class="btn-outline">看光位解析</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <svg viewBox="0 0 260 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="30" width="220" height="140" rx="12" fill="#FFFFFF" fill-opacity="0.5" />
+            <circle cx="90" cy="100" r="35" fill="#CBB59D" fill-opacity="0.6" />
+            <circle cx="170" cy="100" r="35" fill="#9B7B5C" fill-opacity="0.4" />
+            <rect x="60" y="140" width="140" height="8" rx="4" fill="#6D5541" fill-opacity="0.3" />
+            <path d="M110 60 L150 100 L110 140" stroke="#6D5541" stroke-width="2" stroke-opacity="0.5" />
+            <line x1="50" y1="50" x2="210" y2="50" stroke="#CBB59D" stroke-width="1.5" stroke-dasharray="4 4" />
+          </svg>
+        </div>
+      </section>
+
+      <!-- 1. 主题领域概览 -->
+      <section id="overview">
+        <h2 class="section-title">摄影刊物套图的内容构成 <small>本期方向</small></h2>
+        <div class="overview-text">
+          <p>数字摄影刊物通常围绕一个拍摄主题，将原片、花絮、访谈和器材信息打包呈现。本期第33刊以“无圣光”为布光核心——现场不设大面积柔光箱，改用硬光与反光板控制阴影走向。套图包含棚拍原片12张、花絮侧拍视频3段、模特林溪的访谈全文，以及灯具清单和现场灯位图。原片保留Exif信息，可查看ISO、快门与光圈组合。</p>
+          <p>与常规棚拍不同，无圣光方案在皮肤质感上呈现更明显的颗粒与对比，暗部保留细节但高光收得较紧。花絮侧拍记录了布光调整过程：从下午2点第一盏硬光箱就位，到4点20分补反光板，再到5点10分模特补妆间隙的试光。器材清单列出保富图D2和Profoto 7英寸反光罩的具体型号。</p>
+          <p>访谈部分涉及模特对硬光长时间照射的体感反馈，以及摄影师对后期调色幅度的取舍。整刊还附带一份布光参数表，标注每张原片对应的灯位角度和输出功率。</p>
+        </div>
+      </section>
+
+      <!-- 2. 精选内容推荐 -->
+      <section id="featured">
+        <h2 class="section-title">精选套图与访谈卡片 <small>6 项</small></h2>
+        <div class="card-grid">
+          <div class="card">
+            <img src="https://picsum.photos/seed/baijin33-hardlight/400/300" alt="硬光侧脸特写原片，面部阴影锐利" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title">硬光侧脸·原片01</div>
+              <div class="card-tags"><span class="tag">棚拍原片</span><span class="tag">无圣光</span><span class="tag">硬光</span></div>
+              <div class="card-desc">灯位在主光左前45度，输出功率6.3，面部阴影边缘清晰。保留Exif可查快门1/160、光圈f/8。</div>
+              <div class="card-meta"><span>更新 11-06</span><span>热度 2.4k</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://picsum.photos/seed/baijin33-bts-video/400/300" alt="花絮侧拍视频截图，摄影师调整灯架" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title">花絮侧拍·布光调整</div>
+              <div class="card-tags"><span class="tag">花絮视频</span><span class="tag">布光</span><span class="tag">现场</span></div>
+              <div class="card-desc">记录从硬光箱就位到反光板补光的完整时间线，包含模特试光时的动作指导原声。</div>
+              <div class="card-meta"><span>11-04</span><span>播放 1.8k</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://picsum.photos/seed/baijin33-interview/400/300" alt="模特林溪访谈现场照片，坐在摄影棚折叠椅上" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title">林溪访谈：硬光下的体感</div>
+              <div class="card-tags"><span class="tag">模特访谈</span><span class="tag">林溪</span><span class="tag">体感</span></div>
+              <div class="card-desc">林溪提到连续硬光照射3小时后眼部干涩，摄影师随后调整了灯位高度。访谈全文约2200字。</div>
+              <div class="card-meta"><span>11-02</span><span>阅读 3.1k</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://picsum.photos/seed/baijin33-lighting/400/300" alt="现场灯位图，标注主光与反光板角度" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title">灯位图·硬光箱与反光板</div>
+              <div class="card-tags"><span class="tag">灯位图</span><span class="tag">硬光箱</span><span class="tag">反光板</span></div>
+              <div class="card-desc">主光硬光箱距模特3.2米，反光板在右侧2.1米处，补光比约1:4。附角度标注。</div>
+              <div class="card-meta"><span>11-05</span><span>收藏 890</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://picsum.photos/seed/baijin33-gear/400/300" alt="摄影器材清单，保富图D2灯头与反光罩" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title">器材清单·保富图D2</div>
+              <div class="card-tags"><span class="tag">器材</span><span class="tag">D2</span><span class="tag">反光罩</span></div>
+              <div class="card-desc">主灯保富图D2配7英寸标准反光罩，输出功率6.3；辅灯同型号加蜂巢，功率4.0。</div>
+              <div class="card-meta"><span>11-01</span><span>收藏 1.2k</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://picsum.photos/seed/baijin33-raw02/400/300" alt="半身硬光原片，锁骨阴影明显" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title">半身硬光·原片07</div>
+              <div class="card-tags"><span class="tag">棚拍原片</span><span class="tag">半身</span><span class="tag">硬光</span></div>
+              <div class="card-desc">锁骨与下颌阴影形成锐利分界，后期未做柔化。Exif显示光圈f/9，快门1/200。</div>
+              <div class="card-meta"><span>11-06</span><span>热度 1.9k</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. 最新更新 / 动态 -->
+      <section id="updates">
+        <h2 class="section-title">最新更新动态 <small>8 条</small></h2>
+        <div class="update-list">
+          <div class="update-item"><span class="name">原片09-12</span><span class="summary">11月6日 18:20 上线，包含四张侧面硬光，Exif可查。</span></div>
+          <div class="update-item"><span class="name">花絮视频03</span><span class="summary">11月5日 10:05 发布，内容为反光板调整实拍，时长2分48秒。</span></div>
+          <div class="update-item"><span class="name">器材清单更新</span><span class="summary">11月5日 09:12 补充蜂巢型号，保富图7英寸蜂巢，编号101321。</span></div>
+          <div class="update-item"><span class="name">林溪访谈全文</span><span class="summary">11月2日 20:00 上线，共6个问答，涉及硬光体感与补妆节奏。</span></div>
+          <div class="update-item"><span class="name">灯位图V2</span><span class="summary">11月4日 15:30 修正主光距离，从2.8米改为3.2米。</span></div>
+          <div class="update-item"><span class="name">花絮侧拍02</span><span class="summary">11月3日 11:20 发布，记录模特补妆间隙的试光过程。</span></div>
+          <div class="update-item"><span class="name">原片05-08</span><span class="summary">11月1日 17:40 上线，包含正面硬光与低角度机位。</span></div>
+          <div class="update-item"><span class="name">布光参数表</span><span class="summary">10月30日 14:00 发布，每张原片对应功率与角度数据。</span></div>
+        </div>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section id="categories">
+        <h2 class="section-title">分类检索入口 <small>8 类</small></h2>
+        <div class="category-grid">
+          <a href="#featured" class="category-item">棚拍原片</a>
+          <a href="#featured" class="category-item">花絮侧拍</a>
+          <a href="#featured" class="category-item">模特访谈</a>
+          <a href="#featured" class="category-item">器材清单</a>
+          <a href="#featured" class="category-item">灯位图</a>
+          <a href="#featured" class="category-item">布光参数</a>
+          <a href="#featured" class="category-item">后期调色</a>
+          <a href="#featured" class="category-item">Exif信息</a>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析正文 -->
+      <section id="deep-dive">
+        <h2 class="section-title">无圣光布光的判断维度 <small>光位与质感</small></h2>
+        <div class="deep-dive">
+          <h3>硬光边缘与皮肤纹理的取舍</h3>
+          <p>无圣光方案追求阴影边缘的清晰度，但代价是皮肤纹理被强化。原片01中，林溪左脸颊的毛孔在硬光下清晰可见，后期修图师保留了这些细节。判断一套无圣光套图是否合格，可以看阴影过渡带的宽度——从高光到阴影的像素过渡如果超过8个像素，说明光源面积偏大或距离太近。本期参数表中，主光硬光箱距模特3.2米，过渡带约4像素，符合硬光标准。</p>
+          <h3>灯位角度与面部结构的匹配</h3>
+          <p>第33刊使用了两种主光角度：左前45度和正前方偏上15度。前者在鼻梁右侧留下三角形高光，后者让下颌线更突出。对比原片01和原片07，前者更强调颧骨立体感，后者适合展示颈部线条。模特林溪的访谈中提到，左前45度时她需要轻微转头才能避免右眼落入阴影，这个细节在花絮视频02的1分12秒处有记录。</p>
+          <h3>反光板补光比的现场控制</h3>
+          <p>反光板放在右侧2.1米处，补光比约1:4。花絮视频03记录了摄影师用测光表读取阴影面读数，从f/2.8调整到f/4的过程。补光比过大（如1:2）会削弱硬光特征，过小（如1:8）则暗部细节丢失。本期参数表建议1:4到1:5之间，具体取决于模特肤色深浅。林溪肤色偏浅，最终选了1:4.2。</p>
+          <h3>后期调色的幅度边界</h3>
+          <p>原片保留了Exif，后期调色仅涉及对比度和色温微调。对比原片01与最终成片，阴影部分的蓝色色相偏移控制在3°以内。调色师在访谈中说过，无圣光套图的后期空间窄——硬光留下的阴影层次一旦被压平，就失去了布光的意义。这一判断可核对：原片07的直方图显示暗部信息集中在0-15区间，提亮超过1档就会出现噪点。</p>
+        </div>
+      </section>
+
+      <!-- 6. 体验指南 / 消费路径 -->
+      <section id="guide">
+        <h2 class="section-title">观看与判断顺序 <small>消费路径</small></h2>
+        <div class="guide-steps">
+          <div class="guide-step">先看灯位图和器材清单，了解硬光箱与反光板的位置关系，建立空间感。</div>
+          <div class="guide-step">然后翻原片01、07、09，对比左前45度与正前方15度的阴影差异，注意下颌和鼻梁的投影走向。</div>
+          <div class="guide-step">接着看花絮视频02和03，确认布光调整的实际时间点，对照参数表中的功率变化。</div>
+          <div class="guide-step">访谈放在原片之后看，林溪对硬光体感的描述能补充画面之外的信息，比如眼部干涩出现的具体时间。</div>
+          <div class="guide-step">最后查看后期调色幅度，对比原片直方图与成片，判断阴影是否被过度提亮。</div>
+        </div>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section id="faq">
+        <h2 class="section-title">常见问题 <small>6 问</small></h2>
+        <div class="faq-list">
+          <details>
+            <summary>无圣光套图和普通棚拍套图有什么区别？</summary>
+            <p>普通棚拍常用大面积柔光箱，阴影边缘模糊；无圣光方案使用硬光箱或裸灯，阴影边缘锐利，皮肤纹理保留更多。本期第33刊的灯位图显示主光用7英寸反光罩，没有加柔光布。</p>
+          </details>
+          <details>
+            <summary>原片Exif里有哪些参数值得留意？</summary>
+            <p>重点看光圈、快门和ISO组合。本期原片01是f/8、1/160秒、ISO 100，原片07是f/9、1/200秒、ISO 100。光圈值越大，景深越深，硬光下的细节保留越完整。</p>
+          </details>
+          <details>
+            <summary>花絮视频里的灯位调整和最终参数表一致吗？</summary>
+            <p>存在一次修正。花絮视频02中主光距离约2.8米，11月4日更新的灯位图V2改为3.2米，参数表以V2为准。视频中能看到摄影师用卷尺重新测量。</p>
+          </details>
+          <details>
+            <summary>模特林溪访谈里提到的补妆频率是多少？</summary>
+            <p>访谈原文提到每40分钟补一次妆，因为硬光下皮肤出油更明显。花絮视频03的2分10秒处可以听到化妆师说“第三次补妆”。</p>
+          </details>
+          <details>
+            <summary>无圣光套图的后期调色通常控制在什么范围？</summary>
+            <p>阴影色相偏移控制在3°以内，对比度调整不超过8%。本期原片07的直方图显示暗部集中在0-15区间，提亮超过1档会出现噪点，调色师没有做大幅度提亮。</p>
+          </details>
+          <details>
+            <summary>反光板补光比1:4和1:5的视觉差异在哪里？</summary>
+            <p>1:4的阴影面更亮，暗部细节更多；1:5的对比更强，适合强调轮廓。本期林溪肤色偏浅，选1:4.2，在参数表第3页有标注。</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section id="comments">
+        <h2 class="section-title">读者短评 <small>12 条</small></h2>
+        <div class="comment-grid">
+          <div class="comment-item"><div class="comment-user">@快门工阿凯</div>原片07那个锁骨阴影真够锐的，f/9还能保留这么多细节，灯确实够硬。</div>
+          <div class="comment-item"><div class="comment-user">@林溪的围巾</div>花絮视频02里林溪眨眼频率明显变高了，硬光晃眼吧。</div>
+          <div class="comment-item"><div class="comment-user">@暗房小赵</div>灯位图V2改距离那次，其实3.2米比2.8米更合理，2.8米拍半身压迫感太强。</div>
+          <div class="comment-item"><div class="comment-user">@调色师老吴</div>阴影色相偏3°这个控制得不错，好多无圣光套图直接偏5°以上，脸发青。</div>
+          <div class="comment-item"><div class="comment-user">@胶片不死</div>器材清单里蜂巢编号101321，我手里那个是101320，差一位。</div>
+          <div class="comment-item"><div class="comment-user">@只看花絮</div>访谈全文太长了，跳着看的。不过林溪说眼部干涩那段挺真实。</div>
+          <div class="comment-item"><div class="comment-user">@硬光爱好者</div>补光比1:4.2，这个数卡得细。我一般1:4就收工了。</div>
+          <div class="comment-item"><div class="comment-user">@棚拍打杂</div>Exif保留快门1/160，闪光同步没问题，但要是1/200就得看相机型号了。</div>
+          <div class="comment-item"><div class="comment-user">@不吃香菜</div>这期模特表现力还行，就是动作少了点，原片05-08机位变化不大。</div>
+          <div class="comment-item"><div class="comment-user">@读刊人</div>布光参数表第3页那个角度标注，我量了一下，和灯位图差了2度。</div>
+          <div class="comment-item"><div class="comment-user">@夜猫子</div>花絮视频03的2分10秒，化妆师声音太小了，得戴耳机。</div>
+          <div class="comment-item"><div class="comment-user">@摄影学生</div>正前方15度那个灯位，下颌线确实清楚，但鼻子下面阴影太重，个人不太喜欢。</div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section id="news">
+        <h2 class="section-title">刊物相关资讯 <small>6 条</small></h2>
+        <div class="news-list">
+          <div class="news-item">
+            <div class="news-title">白金刊第33刊无圣光套图原片09-12上线 <span class="news-date">2026-11-06</span></div>
+            <div class="news-summary">本次上线四张侧面硬光，其中原片11的灯位距模特3.5米，比参数表标注的3.2米多了0.3米，摄影师在评论区确认是临时调整。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">花絮视频03收录反光板补光比调整过程 <span class="news-date">2026-11-05</span></div>
+            <div class="news-summary">视频2分48秒，其中1分50秒处测光表读数从f/2.8跳到f/4，补光比从1:5.2变为1:4.2，与最终参数表一致。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">林溪访谈全文上线，提及硬光下补妆频率 <span class="news-date">2026-11-02</span></div>
+            <div class="news-summary">访谈共6个问答，第3问明确补妆间隔40分钟，第5问提到摄影师在下午4点20分降低了灯位高度约10厘米。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">灯位图V2修正主光距离为3.2米 <span class="news-date">2026-11-04</span></div>
+            <div class="news-summary">原版灯位图标为2.8米，V2版在11月4日15:30更新，同时反光板距离从2.4米调整为2.1米。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">器材清单补充蜂巢型号与编号 <span class="news-date">2026-11-05</span></div>
+            <div class="news-summary">新增保富图7英寸蜂巢，编号101321，输出功率标注为4.0，用于辅灯。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">布光参数表发布，含每张原片功率与角度 <span class="news-date">2026-10-30</span></div>
+            <div class="news-summary">表格共12行，对应原片01-12，列包括灯位角度、输出功率、反光板距离和补光比。第7行注明原片07的补光比为1:4.2。</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section id="related">
+        <h2 class="section-title">相关推荐标签 <small>8 项</small></h2>
+        <div class="related-tags">
+          <a href="#featured">硬光箱布光</a>
+          <a href="#featured">保富图D2</a>
+          <a href="#featured">林溪访谈</a>
+          <a href="#featured">Exif参数</a>
+          <a href="#featured">灯位图V2</a>
+          <a href="#featured">补光比1:4</a>
+          <a href="#featured">阴影边缘</a>
+          <a href="#featured">花絮侧拍</a>
+        </div>
+      </section>
+
+      <!-- 11. 补充板块：热门榜单 -->
+      <section id="hot-rank">
+        <h2 class="section-title">热门条目排行 <small>按收藏量</small></h2>
+        <div class="sidebar-card" style="background:var(--panel); padding:1.2rem;">
+          <ul class="rank-list">
+            <li class="rank-item"><span class="rank-num">01</span><div class="rank-text"><strong>半身硬光·原片07</strong>收藏 1.2k · 阴影边缘过渡清晰</div></li>
+            <li class="rank-item"><span class="rank-num">02</span><div class="rank-text"><strong>林溪访谈：硬光下的体感</strong>阅读 3.1k · 补妆频率细节</div></li>
+            <li class="rank-item"><span class="rank-num">03</span><div class="rank-text"><strong>硬光侧脸·原片01</strong>热度 2.4k · Exif保留完整</div></li>
+            <li class="rank-item"><span class="rank-num">04</span><div class="rank-text"><strong>灯位图V2</strong>收藏 890 · 主光距离3.2米</div></li>
+            <li class="rank-item"><span class="rank-num">05</span><div class="rank-text"><strong>花絮视频03</strong>播放 1.8k · 测光表读数变化</div></li>
+            <li class="rank-item"><span class="rank-num">06</span><div class="rank-text"><strong>器材清单·保富图D2</strong>收藏 1.2k · 蜂巢编号101321</div></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 投稿互动栏目 -->
+      <section id="submit-interact">
+        <h2 class="section-title">参与投稿与交流 <small>社区入口</small></h2>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="#" class="btn-outline" style="flex:1; text-align:center; padding:1rem;">上传你的无圣光布光作品</a>
+          <a href="#" class="btn-outline" style="flex:1; text-align:center; padding:1rem;">参加下期灯位方案讨论</a>
+          <a href="#" class="btn-outline" style="flex:1; text-align:center; padding:1rem;">提交花絮侧拍素材</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右侧辅助栏 -->
+    <aside class="right-sidebar">
+      <div class="sidebar-card">
+        <h3>更新情报</h3>
+        <ul class="rank-list" style="gap:0.6rem;">
+          <li class="rank-item"><span class="rank-num">11/06</span><div class="rank-text">原片09-12上线，包含四张侧面硬光</div></li>
+          <li class="rank-item"><span class="rank-num">11/05</span><div class="rank-text">花絮视频03发布，记录补光比调整</div></li>
+          <li class="rank-item"><span class="rank-num">11/04</span><div class="rank-text">灯位图V2修正主光距离为3.2米</div></li>
+          <li class="rank-item"><span class="rank-num">11/02</span><div class="rank-text">林溪访谈全文上线，共6个问答</div></li>
+          <li class="rank-item"><span class="rank-num">10/30</span><div class="rank-text">布光参数表发布，含12张原片数据</div></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h3>热门标签</h3>
+        <div class="related-tags" style="gap:0.5rem;">
+          <a href="#featured" style="font-size:0.8rem;">硬光箱</a>
+          <a href="#featured" style="font-size:0.8rem;">补光比</a>
+          <a href="#featured" style="font-size:0.8rem;">Exif</a>
+          <a href="#featured" style="font-size:0.8rem;">灯位图</a>
+          <a href="#featured" style="font-size:0.8rem;">林溪</a>
+          <a href="#featured" style="font-size:0.8rem;">D2</a>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <h3>投稿入口</h3>
+        <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:0.8rem;">上传硬光布光作品或花絮，通过审核后进入下期候选。</p>
+        <a href="#" class="btn-outline" style="display:block; text-align:center; font-size:0.85rem; padding:0.5rem;">立即投稿</a>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>白金刊第33刊无圣光套图</h3>
+        <p>时间跨度2026年10月30日至11月6日，收录12张棚拍原片、3段花絮侧拍、1份模特访谈与1份布光参数表。每两日更新一次原片或花絮，参数表随灯位调整同步修订。</p>
+      </div>
+      <div class="footer-col">
+        <h4>栏目</h4>
+        <a href="#overview">套图概览</a>
+        <a href="#featured">精选原片</a>
+        <a href="#updates">更新动态</a>
+        <a href="#deep-dive">光位解析</a>
+        <a href="#guide">观看顺序</a>
+      </div>
+      <div class="footer-col">
+        <h4>互动</h4>
+        <a href="#submit-interact">作品投稿</a>
+        <a href="#submit-interact">花絮上传</a>
+        <a href="#comments">读者短评</a>
+        <a href="#faq">常见问题</a>
+      </div>
+      <div class="footer-col">
+        <h4>信息</h4>
+        <a href="#news">刊物资讯</a>
+        <a href="#related">相关标签</a>
+        <a href="#hot-rank">热门排行</a>
+        <a href="#hero">回到顶部</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 白金刊第33刊无圣光套图 · 示例内容说明：条目与数据为演示用途</span>
+      <span>更新于 2026-11-08</span>
+    </div>
+  </footer>
+
+  <!-- 回到顶部按钮 -->
+  <button class="back-to-top" id="back-to-top" aria-label="回到顶部">↑</button>
+
+  <script>
+    (function() {
+      // 移动端菜单切换
+      const menuToggle = document.getElementById('menu-toggle');
+      const menuOverlay = document.getElementById('menu-overlay');
+      const mainNav = document.querySelector('.main-nav');
+      const siteHeader = document.querySelector('.site-header');
+
+      // 创建移动端导航副本（仅用于移动端显示）
+      let mobileNavContainer = null;
+
+      function openMobileMenu() {
+        if (!mobileNavContainer) {
+          mobileNavContainer = document.createElement('div');
+          mobileNavContainer.style.position = 'fixed';
+          mobileNavContainer.style.top = 'calc(var(--announce-height) + var(--header-height))';
+          mobileNavContainer.style.left = '0';
+          mobileNavContainer.style.right = '0';
+          mobileNavContainer.style.background = 'var(--panel)';
+          mobileNavContainer.style.borderBottom = '1px solid var(--border)';
+          mobileNavContainer.style.boxShadow = 'var(--shadow-hover)';
+          mobileNavContainer.style.zIndex = '95';
+          mobileNavContainer.style.padding = '1rem';
+          mobileNavContainer.style.display = 'flex';
+          mobileNavContainer.style.flexDirection = 'column';
+          mobileNavContainer.style.gap = '0.5rem';
+          mobileNavContainer.style.maxHeight = 'calc(100vh - var(--sticky-offset))';
+          mobileNavContainer.style.overflowY = 'auto';
+
+          const navLinks = mainNav ? mainNav.querySelectorAll('a') : [];
+          navLinks.forEach(link => {
+            const a = document.createElement('a');
+            a.href = link.getAttribute('href');
+            a.textContent = link.textContent;
+            a.style.padding = '0.6rem 1rem';
+            a.style.borderRadius = '8px';
+            a.style.color = 'var(--text-secondary)';
+            a.style.fontWeight = '500';
+            a.style.display = 'block';
+            a.addEventListener('click', (e) => {
+              closeMobileMenu();
+            });
+            mobileNavContainer.appendChild(a);
+          });
+
+          document.body.appendChild(mobileNavContainer);
+        }
+
+        if (mobileNavContainer) mobileNavContainer.style.display = 'flex';
+        menuOverlay.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMobileMenu() {
+        if (mobileNavContainer) mobileNavContainer.style.display = 'none';
+        menuOverlay.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+
+      if (menuToggle) {
+        menuToggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (menuOverlay.style.display === 'block') {
+            closeMobileMenu();
+          } else {
+            openMobileMenu();
+          }
+        });
+      }
+
+      if (menuOverlay) {
+        menuOverlay.addEventListener('click', closeMobileMenu);
+      }
+
+      // ESC 关闭菜单
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeMobileMenu();
+        }
+      });
+
+      // 回到顶部
+      const backBtn = document.getElementById('back-to-top');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 600) {
+          backBtn.classList.add('visible');
+        } else {
+          backBtn.classList.remove('visible');
+        }
+      });
+      backBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 搜索按钮功能：简单查找可见文本
+      const searchBtn = document.getElementById('search-btn');
+      if (searchBtn) {
+        searchBtn.addEventListener('click', function() {
+          const keyword = prompt('输入要查找的内容关键词：');
+          if (!keyword) return;
+          const lower = keyword.toLowerCase();
+          const allText = document.body.innerText.toLowerCase();
+          if (allText.includes(lower)) {
+            // 滚动到第一个匹配的区块
+            const sections = document.querySelectorAll('section');
+            for (let sec of sections) {
+              if (sec.innerText.toLowerCase().includes(lower)) {
+                sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                break;
+              }
+            }
+          } else {
+            alert('未找到匹配内容，请尝试其他关键词。');
+          }
+        });
+      }
+
+      // 投稿按钮
+      const submitBtn = document.getElementById('submit-btn');
+      if (submitBtn) {
+        submitBtn.addEventListener('click', function() {
+          document.getElementById('submit-interact')?.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+
+      // 平滑滚动，考虑吸顶偏移
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === '#') return;
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            const offset = document.getElementById('announce-bar').offsetHeight + document.getElementById('site-header').offsetHeight;
+            const top = target.getBoundingClientRect().top + window.scrollY - offset - 10;
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
+        });
+      });
+
+    })();
+  </script>
+
+  <!-- WebSite 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "白金刊第33刊无圣光套图",
+    "description": "白金刊第33刊无圣光套图收录本期完整套图与创作背景，包括棚拍原片、花絮、模特访谈和器材清单。",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+
+  <!-- FAQPage 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "无圣光套图和普通棚拍套图有什么区别？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "普通棚拍常用大面积柔光箱，阴影边缘模糊；无圣光方案使用硬光箱或裸灯，阴影边缘锐利，皮肤纹理保留更多。本期第33刊的灯位图显示主光用7英寸反光罩，没有加柔光布。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "原片Exif里有哪些参数值得留意？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "重点看光圈、快门和ISO组合。本期原片01是f/8、1/160秒、ISO 100，原片07是f/9、1/200秒、ISO 100。光圈值越大，景深越深，硬光下的细节保留越完整。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "花絮视频里的灯位调整和最终参数表一致吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "存在一次修正。花絮视频02中主光距离约2.8米，11月4日更新的灯位图V2改为3.2米，参数表以V2为准。视频中能看到摄影师用卷尺重新测量。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "模特林溪访谈里提到的补妆频率是多少？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "访谈原文提到每40分钟补一次妆，因为硬光下皮肤出油更明显。花絮视频03的2分10秒处可以听到化妆师说“第三次补妆”。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "无圣光套图的后期调色通常控制在什么范围？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "阴影色相偏移控制在3°以内，对比度调整不超过8%。本期原片07的直方图显示暗部集中在0-15区间，提亮超过1档会出现噪点，调色师没有做大幅度提亮。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "反光板补光比1:4和1:5的视觉差异在哪里？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "1:4的阴影面更亮，暗部细节更多；1:5的对比更强，适合强调轮廓。本期林溪肤色偏浅，选1:4.2，在参数表第3页有标注。"
+        }
+      }
+    ]
+  }
+  </script>
+
+</body>
+                                                             </html>
