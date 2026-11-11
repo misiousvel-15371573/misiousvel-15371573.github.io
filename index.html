@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>17.c 起草口 - 规范条款与文书起草聚合</title>
+<meta name="description" content="17.c 起草口聚焦合同条款、协议模板、规章制度等文书起草场景，收录条款示例、格式规范、审核要点与常见争议解析，适合法务、行政与自由职业者参考。">
+<meta name="keywords" content="17.c 起草口">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231e3a5f'/%3E%3Cpath d='M18 18h20l8 8v20H18z' fill='none' stroke='%23e8b64c' stroke-width='3'/%3E%3Cpath d='M38 18v8h8' fill='none' stroke='%23e8b64c' stroke-width='3'/%3E%3Cpath d='M24 34h16M24 40h12' stroke='%23e8b64c' stroke-width='3'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1c2a3a;
+  --ink-2:#3d4f63;
+  --ink-3:#6b7c8f;
+  --line:#d9e0e8;
+  --bg:#f4f6f9;
+  --panel:#ffffff;
+  --brand:#1e3a5f;
+  --brand-soft:#e8eef5;
+  --brand-mid:#2c5a8a;
+  --accent:#c98a1e;
+  --accent-soft:#fdf3e0;
+  --radius-card:10px;
+  --radius-btn:6px;
+  --radius-tag:4px;
+  --shadow:0 1px 3px rgba(28,42,58,.08);
+  --shadow-hover:0 6px 18px rgba(28,42,58,.13);
+  --sticky-h:96px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sticky-h)}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  font-size:15px;
+  line-height:1.75;
+}
+a{color:var(--brand-mid);text-decoration:none}
+a:hover{color:var(--accent)}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 .8em}
+ul,ol{margin:0 0 .8em;padding-left:1.3em}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* 吸顶组合 */
+.sticky-wrap{position:sticky;top:0;z-index:60}
+.announce{
+  background:var(--brand);
+  color:#e8eef5;
+  font-size:13px;
+  padding:6px 20px;
+  display:flex;
+  gap:22px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.announce strong{color:#f3d18b}
+.announce .dot{width:5px;height:5px;border-radius:50%;background:#f3d18b;display:inline-block;margin-right:6px}
+.site-header{
+  background:rgba(255,255,255,.93);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
+.header-inner{
+  max-width:1360px;
+  margin:0 auto;
+  padding:0 20px;
+  height:64px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.brand svg{width:32px;height:32px}
+.brand-text{font-size:19px;font-weight:800;color:var(--brand);letter-spacing:.5px;white-space:nowrap}
+.main-nav{display:flex;gap:4px;margin-left:12px;flex-wrap:wrap}
+.main-nav a{
+  font-size:14px;
+  padding:6px 11px;
+  border-radius:var(--radius-btn);
+  color:var(--ink-2);
+  font-weight:500;
+  white-space:nowrap;
+}
+.main-nav a:hover{background:var(--brand-soft);color:var(--brand)}
+.header-tools{margin-left:auto;display:flex;align-items:center;gap:10px}
+.search-box{position:relative}
+.search-box input{
+  width:180px;
+  padding:7px 12px;
+  border:1px solid var(--line);
+  border-radius:var(--radius-btn);
+  font-size:13px;
+  background:var(--bg);
+  color:var(--ink);
+}
+.search-box input:focus{outline:2px solid var(--brand-mid);background:#fff}
+.search-feedback{
+  position:absolute;top:calc(100% + 6px);left:0;right:0;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-card);
+  box-shadow:var(--shadow-hover);font-size:13px;padding:8px 12px;display:none;z-index:80;
+}
+.search-feedback.show{display:block}
+.btn-ghost{
+  border:1px solid var(--brand);
+  color:var(--brand);
+  background:transparent;
+  padding:6px 14px;
+  border-radius:var(--radius-btn);
+  font-size:13px;
+  font-weight:600;
+  white-space:nowrap;
+}
+.btn-ghost:hover{background:var(--brand);color:#fff}
+.hamburger{display:none;background:none;border:1px solid var(--line);border-radius:var(--radius-btn);padding:6px 9px;font-size:17px;line-height:1;color:var(--brand)}
+.mobile-nav{display:none;background:#fff;border-bottom:1px solid var(--line);padding:10px 20px}
+.mobile-nav.open{display:block}
+.mobile-nav a{display:block;padding:9px 6px;border-radius:var(--radius-btn);color:var(--ink-2);font-size:14px}
+.mobile-nav a:hover{background:var(--brand-soft)}
+
+/* 首屏 */
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(130deg,#eef3f9 0%,#e2ebf5 45%,#f7f2e6 100%);
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{
+  max-width:1360px;
+  margin:0 auto;
+  padding:52px 20px 46px;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:40px;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;border:1px solid #cdd9e6;
+  color:var(--brand);font-size:12.5px;font-weight:600;
+  padding:4px 12px;border-radius:20px;margin-bottom:16px;
+}
+.hero h1{
+  font-size:40px;
+  color:var(--brand);
+  letter-spacing:1px;
+  margin-bottom:16px;
+}
+.hero-desc{
+  font-size:15.5px;
+  color:var(--ink-2);
+  max-width:560px;
+  line-height:1.85;
+  margin-bottom:22px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{
+  background:var(--brand);
+  color:#fff;
+  border:none;
+  padding:10px 22px;
+  border-radius:var(--radius-btn);
+  font-size:14px;
+  font-weight:600;
+  box-shadow:var(--shadow);
+}
+.btn-primary:hover{background:var(--brand-mid);color:#fff;transform:translateY(-1px);box-shadow:var(--shadow-hover)}
+.btn-accent{
+  background:var(--accent-soft);
+  color:#8f5e0a;
+  border:1px solid #e9c98a;
+  padding:10px 22px;
+  border-radius:var(--radius-btn);
+  font-size:14px;
+  font-weight:600;
+}
+.btn-accent:hover{background:#f8e6c4;transform:translateY(-1px)}
+.hero-visual{position:relative;height:300px}
+.hero-visual svg{width:100%;height:100%}
+.hero-stats{
+  display:flex;gap:26px;margin-top:26px;flex-wrap:wrap;
+}
+.hero-stat b{display:block;font-size:22px;color:var(--brand);line-height:1.2}
+.hero-stat span{font-size:12.5px;color:var(--ink-3)}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.hero-float{animation:floaty 6s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.hero-float{animation:none}html{scroll-behavior:auto}}
+
+/* 布局 */
+.container{
+  max-width:1360px;
+  margin:0 auto;
+  padding:34px 20px 60px;
+  display:grid;
+  grid-template-columns:180px minmax(0,1fr) 250px;
+  gap:28px;
+  align-items:start;
+}
+.channel-col{position:sticky;top:calc(var(--sticky-h) + 20px)}
+.channel-col h2{font-size:13px;color:var(--ink-3);letter-spacing:1px;margin-bottom:10px;font-weight:600}
+.channel-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.channel-list a{
+  display:block;padding:7px 10px;border-radius:var(--radius-btn);
+  font-size:13.5px;color:var(--ink-2);border-left:3px solid transparent;
+}
+.channel-list a:hover{background:var(--brand-soft);color:var(--brand)}
+.channel-list a.active{background:var(--brand-soft);color:var(--brand);border-left-color:var(--accent);font-weight:600}
+
+.main-col{min-width:0}
+.side-col{position:sticky;top:calc(var(--sticky-h) + 20px);display:flex;flex-direction:column;gap:22px}
+
+/* 板块通用 */
+.section{margin-bottom:46px;scroll-margin-top:var(--sticky-h)}
+.section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.section-head h2{font-size:21px;color:var(--brand)}
+.section-head .sub{font-size:12.5px;color:var(--ink-3)}
+.section-lead{font-size:14px;color:var(--ink-2);margin-bottom:16px;max-width:78ch}
+
+/* 概览 */
+.overview{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--radius-card);
+  padding:22px 24px;
+  box-shadow:var(--shadow);
+  font-size:14.5px;
+  color:var(--ink-2);
+}
+.overview p{margin-bottom:.9em}
+.overview p:last-child{margin-bottom:0}
+.overview strong{color:var(--brand)}
+
+/* 精选卡片 */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  overflow:hidden;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s;
+  display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.card-thumb{width:100%;height:140px;object-fit:cover;background:var(--brand-soft)}
+.card-body{padding:13px 15px 15px;display:flex;flex-direction:column;gap:7px;flex:1}
+.card-body h3{font-size:15px;color:var(--ink);line-height:1.45}
+.card-body h3 a{color:var(--ink)}
+.card-body h3 a:hover{color:var(--brand)}
+.card-desc{font-size:13px;color:var(--ink-3);line-height:1.65;flex:1}
+.tag-row{display:flex;gap:6px;flex-wrap:wrap}
+.tag{
+  font-size:11.5px;padding:2px 8px;border-radius:var(--radius-tag);
+  background:var(--brand-soft);color:var(--brand-mid);
+}
+.tag.accent{background:var(--accent-soft);color:#8f5e0a}
+.card-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--ink-3);border-top:1px dashed var(--line);padding-top:8px;margin-top:2px}
+.card-meta b{color:var(--accent);font-weight:700}
+
+/* 更新列表 */
+.update-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.update-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:12px 16px;display:flex;gap:14px;align-items:flex-start;box-shadow:var(--shadow);
+}
+.update-item:hover{border-color:#c3d2e2}
+.update-date{font-size:12px;color:var(--ink-3);white-space:nowrap;min-width:76px;padding-top:2px}
+.update-main{flex:1;min-width:0}
+.update-main h3{font-size:14.5px;margin-bottom:3px}
+.update-main h3 a{color:var(--ink)}
+.update-main h3 a:hover{color:var(--brand)}
+.update-main p{font-size:13px;color:var(--ink-3);margin:0}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.cat-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:14px 16px;display:flex;flex-direction:column;gap:5px;box-shadow:var(--shadow);
+}
+.cat-item:hover{border-color:var(--brand-mid);background:#fbfcfe}
+.cat-item h3{font-size:14.5px;color:var(--brand)}
+.cat-item p{font-size:12.5px;color:var(--ink-3);margin:0}
+
+/* 深度解析 */
+.article-deep{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:26px 30px;box-shadow:var(--shadow);
+  font-size:14.5px;color:var(--ink-2);
+}
+.article-deep h3{font-size:17px;color:var(--brand);margin:22px 0 10px}
+.article-deep h3:first-child{margin-top:0}
+.article-deep p{margin-bottom:.85em}
+.article-deep ul{margin-bottom:1em}
+.article-deep li{margin-bottom:5px}
+.article-deep strong{color:var(--ink)}
+.compare-table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 16px}
+.compare-table th,.compare-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.compare-table th{background:var(--brand-soft);color:var(--brand);font-weight:600;white-space:nowrap}
+.callout{
+  background:var(--accent-soft);border-left:4px solid var(--accent);
+  padding:12px 16px;border-radius:0 var(--radius-tag) var(--radius-tag) 0;
+  font-size:13.5px;color:#6b4a12;margin:14px 0;
+}
+
+/* 指南步骤 */
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;counter-reset:step}
+.steps li{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:14px 18px 14px 58px;position:relative;box-shadow:var(--shadow);font-size:14px;color:var(--ink-2);
+}
+.steps li::before{
+  counter-increment:step;content:counter(step);
+  position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;
+  background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;
+}
+.steps li strong{color:var(--ink);display:block;margin-bottom:2px;font-size:14.5px}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-list details{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:0 18px;box-shadow:var(--shadow);
+}
+.faq-list summary{
+  cursor:pointer;font-size:14.5px;font-weight:600;color:var(--ink);
+  padding:13px 0;list-style:none;display:flex;justify-content:space-between;gap:10px;
+}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"＋";color:var(--brand-mid);font-size:16px;line-height:1}
+.faq-list details[open] summary::after{content:"－"}
+.faq-list details[open] summary{color:var(--brand);border-bottom:1px dashed var(--line)}
+.faq-body{padding:12px 0 16px;font-size:13.5px;color:var(--ink-2)}
+.faq-body p:last-child{margin-bottom:0}
+
+/* 评论 */
+.comment-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.comment{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:12px 15px;font-size:13.5px;color:var(--ink-2);box-shadow:var(--shadow);
+}
+.comment .cm-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px;gap:8px}
+.comment .cm-name{font-weight:700;color:var(--brand);font-size:13px}
+.comment .cm-time{font-size:11.5px;color:var(--ink-3)}
+.comment p{margin:0;line-height:1.6}
+
+/* 资讯 */
+.news-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.news-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:15px 18px;box-shadow:var(--shadow);
+}
+.news-item h3{font-size:15px;margin-bottom:4px}
+.news-item h3 a{color:var(--ink)}
+.news-item h3 a:hover{color:var(--brand)}
+.news-meta{font-size:12px;color:var(--ink-3);margin-bottom:6px}
+.news-item p{font-size:13.5px;color:var(--ink-3);margin:0}
+
+/* 推荐标签索引 */
+.tag-index{display:flex;flex-wrap:wrap;gap:9px}
+.tag-index a{
+  background:var(--panel);border:1px solid var(--line);border-radius:20px;
+  padding:6px 15px;font-size:13px;color:var(--ink-2);box-shadow:var(--shadow);
+}
+.tag-index a:hover{border-color:var(--accent);color:#8f5e0a;background:var(--accent-soft)}
+
+/* 侧栏通用 */
+.side-panel{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:16px 18px;box-shadow:var(--shadow);
+}
+.side-panel h2{font-size:14px;color:var(--brand);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.rank-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;counter-reset:rank}
+.rank-list li{display:flex;gap:10px;font-size:13px;line-height:1.5;counter-increment:rank}
+.rank-list li::before{
+  content:counter(rank);font-weight:800;color:var(--brand-mid);font-size:13px;
+  min-width:18px;text-align:center;
+}
+.rank-list li:nth-child(-n+3)::before{color:var(--accent)}
+.rank-list a{color:var(--ink-2)}
+.rank-list a:hover{color:var(--brand)}
+.rank-list .r-meta{display:block;font-size:11.5px;color:var(--ink-3)}
+
+/* 投稿互动 */
+.interact-box{
+  background:linear-gradient(135deg,var(--brand) 0%,#2c5a8a 100%);
+  color:#e8eef5;border-radius:var(--radius-card);padding:20px 20px;box-shadow:var(--shadow);
+}
+.interact-box h2{font-size:15px;color:#fff;margin-bottom:8px;border:none;padding:0}
+.interact-box p{font-size:12.5px;color:#c9d8e8;line-height:1.6;margin-bottom:14px}
+.interact-box .btn-accent{width:100%;text-align:center;display:block;font-size:13px;padding:9px 12px}
+.interact-stats{display:flex;gap:18px;margin-bottom:14px}
+.interact-stats div b{display:block;font-size:19px;color:#f3d18b}
+.interact-stats div span{font-size:11.5px;color:#a9bfd6}
+
+/* 页脚 */
+.site-footer{background:#16283b;color:#a9bfd6;font-size:13px;margin-top:20px}
+.footer-inner{
+  max-width:1360px;margin:0 auto;padding:40px 20px 26px;
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;
+}
+.footer-brand .brand-text{color:#fff;font-size:18px;margin-bottom:10px;display:block}
+.footer-brand p{font-size:12.5px;line-height:1.7;color:#8ba3ba;margin-bottom:10px}
+.footer-col h3{font-size:13px;color:#fff;margin-bottom:10px;font-weight:600}
+.footer-col a{display:block;color:#a9bfd6;font-size:12.5px;padding:3px 0}
+.footer-col a:hover{color:#f3d18b}
+.footer-bottom{
+  border-top:1px solid #2a4058;padding:14px 20px;max-width:1360px;margin:0 auto;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:#7c93a9;
+}
+
+/* 返回顶部 */
+.back-top{
+  position:fixed;right:22px;bottom:26px;width:42px;height:42px;border-radius:50%;
+  background:var(--brand);color:#fff;border:none;font-size:18px;box-shadow:var(--shadow-hover);
+  display:none;align-items:center;justify-content:center;z-index:70;
+}
+.back-top.show{display:flex}
+.back-top:hover{background:var(--brand-mid)}
+
+/* 响应式 */
+@media (max-width:1080px){
+  .container{grid-template-columns:170px minmax(0,1fr);}
+  .side-col{grid-column:1 / -1;position:static;display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+}
+@media (max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:24px;padding:38px 20px 34px}
+  .hero h1{font-size:32px}
+  .hero-visual{height:220px;order:-1}
+  .main-nav{display:none}
+  .hamburger{display:block}
+  .search-box input{width:140px}
+}
+@media (max-width:820px){
+  .container{grid-template-columns:1fr;gap:22px}
+  .channel-col{position:static;order:-1}
+  .channel-list{flex-direction:row;flex-wrap:wrap}
+  .channel-list a{border-left:none;border-bottom:2px solid transparent;padding:6px 10px}
+  .channel-list a.active{border-left:none;border-bottom-color:var(--accent)}
+  .side-col{grid-template-columns:1fr}
+}
+@media (max-width:740px){
+  .header-inner{height:58px;padding:0 14px;gap:10px}
+  .brand-text{font-size:16px}
+  .search-box{display:none}
+  .hero h1{font-size:27px}
+  .hero-stats{gap:18px}
+  .article-deep{padding:20px 18px}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:24px}
+  .card-grid{grid-template-columns:1fr}
+  .comment-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:1fr 1fr}
+  .update-item{flex-direction:column;gap:4px}
+  .update-date{min-width:0}
+  .announce{font-size:12px;gap:12px;padding:6px 14px}
+  .back-top{right:14px;bottom:18px}
+}
+@media (max-width:420px){
+  .cat-grid{grid-template-columns:1fr}
+  .hero-actions .btn-primary,.hero-actions .btn-accent{width:100%;text-align:center}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告 + 页头 -->
+<div class="sticky-wrap">
+  <div class="announce" aria-label="站内公告">
+    <span><span class="dot"></span><strong>17.c 起草口</strong> 11月7日更新：劳务分包合同示范条款（2026修订版）</span>
+    <span><strong>3</strong> 类新增模板：保密协议 / 竞业限制 / 股权代持</span>
+    <span>今日已审校 <strong>28</strong> 份示例文书</span>
+  </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <svg viewBox="0 0 64 64" role="img" aria-label="17.c 起草口标志">
+          <rect width="64" height="64" rx="14" fill="#1e3a5f"/>
+          <path d="M18 14h20l8 8v28H18z" fill="none" stroke="#e8b64c" stroke-width="3"/>
+          <path d="M38 14v8h8" fill="none" stroke="#e8b64c" stroke-width="3"/>
+          <path d="M25 32h14M25 39h10" stroke="#e8b64c" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-text">17.c 起草口</span>
+      </div>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">条款精选</a>
+        <a href="/#updates">更新速递</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">起草路径</a>
+        <a href="/#faq">常见问答</a>
+      </nav>
+      <div class="header-tools">
+        <div class="search-box">
+          <input type="search" id="siteSearch" placeholder="搜索条款 / 模板…" aria-label="站内搜索">
+          <div class="search-feedback" id="searchFeedback" role="status"></div>
+        </div>
+        <button class="btn-ghost" type="button" id="contributeBtn">投稿模板</button>
+        <button class="hamburger" type="button" id="hamburger" aria-expanded="false" aria-controls="mobileNav" aria-label="展开菜单">☰</button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="移动端导航">
+      <a href="/#overview">领域概览</a>
+      <a href="/#featured">条款精选</a>
+      <a href="/#updates">更新速递</a>
+      <a href="/#categories">分类入口</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">起草路径</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#comments">用户评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#contribute">投稿互动</a>
+    </nav>
+  </header>
+</div>
+
+<!-- 首屏 -->
+<section class="hero" aria-label="主题首屏">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-kicker">合同条款 · 协议模板 · 文书规范</span>
+      <h1>17.c 起草口</h1>
+      <p class="hero-desc">
+        汇集劳务分包、股权代持、保密与竞业限制等高频场景的条款示范文本，附审核要点、争议案例与格式规范对比。每份模板标注修订日期与适用边界，方便对照本方法务口径做取舍。
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="/#featured">查看条款精选</a>
+        <a class="btn-accent" href="/#categories">按场景找模板</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>186</b><span>份条款示范文本</span></div>
+        <div class="hero-stat"><b>34</b><span>类争议解析条目</span></div>
+        <div class="hero-stat"><b>11月7日</b><span>最近审校更新</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 420 300" role="img">
+        <defs>
+          <linearGradient id="hgrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity=".9"/>
+            <stop offset="100%" stop-color="#dce7f2" stop-opacity=".6"/>
+          </linearGradient>
+        </defs>
+        <rect x="30" y="20" width="300" height="220" rx="12" fill="url(#hgrad)" stroke="#c3d2e2"/>
+        <rect x="52" y="44" width="120" height="10" rx="5" fill="#1e3a5f" opacity=".8"/>
+        <rect x="52" y="66" width="256" height="7" rx="3.5" fill="#a9bfd6"/>
+        <rect x="52" y="82" width="230" height="7" rx="3.5" fill="#a9bfd6"/>
+        <rect x="52" y="98" width="248" height="7" rx="3.5" fill="#c9d8e8"/>
+        <rect x="52" y="122" width="90" height="8" rx="4" fill="#c98a1e"/>
+        <rect x="52" y="142" width="240" height="7" rx="3.5" fill="#a9bfd6"/>
+        <rect x="52" y="158" width="210" height="7" rx="3.5" fill="#a9bfd6"/>
+        <rect x="52" y="174" width="250" height="7" rx="3.5" fill="#c9d8e8"/>
+        <rect x="52" y="196" width="70" height="22" rx="6" fill="#1e3a5f"/>
+        <text x="87" y="211" font-size="11" fill="#fff" text-anchor="middle" font-family="sans-serif">条款审校</text>
+        <g class="hero-float">
+          <rect x="290" y="110" width="100" height="120" rx="10" fill="#fff" stroke="#c98a1e" stroke-width="2"/>
+          <text x="340" y="138" font-size="11" fill="#1e3a5f" text-anchor="middle" font-family="sans-serif" font-weight="700">17.c</text>
+          <rect x="306" y="150" width="68" height="6" rx="3" fill="#e9c98a"/>
+          <rect x="306" y="164" width="54" height="6" rx="3" fill="#e9c98a"/>
+          <rect x="306" y="178" width="62" height="6" rx="3" fill="#dce7f2"/>
+          <rect x="306" y="192" width="40" height="6" rx="3" fill="#dce7f2"/>
+        </g>
+        <circle cx="60" cy="270" r="5" fill="#c98a1e"/>
+        <circle cx="80" cy="270" r="5" fill="#a9bfd6"/>
+        <circle cx="100" cy="270" r="5" fill="#c9d8e8"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 主体三栏 -->
+<div class="container">
+
+  <!-- 左频道栏 -->
+  <aside class="channel-col" aria-label="频道索引">
+    <h2>频道索引</h2>
+    <ul class="channel-list" id="channelList">
+      <li><a href="/#overview" class="active">领域概览</a></li>
+      <li><a href="/#featured">条款精选</a></li>
+      <li><a href="/#updates">更新速递</a></li>
+      <li><a href="/#categories">分类入口</a></li>
+      <li><a href="/#deep">深度解析</a></li>
+      <li><a href="/#guide">起草路径</a></li>
+      <li><a href="/#faq">常见问答</a></li>
+      <li><a href="/#comments">用户评论</a></li>
+      <li><a href="/#news">相关资讯</a></li>
+      <li><a href="/#recommend">相关推荐</a></li>
+      <li><a href="/#contribute">投稿互动</a></li>
+    </ul>
+  </aside>
+
+  <!-- 中主内容 -->
+  <main class="main-col">
+
+    <!-- 1 领域概览 -->
+    <section class="section" id="overview">
+      <div class="section-head"><h2>文书起草领域的七个方向</h2><span class="sub">截至 2026-11-07 口径</span></div>
+      <div class="overview">
+        <p>起草口对应的实务范围，大致落在<strong>民商事合同、劳动用工协议、公司治理文件、知识产权条款、保密与竞业限制、行政规范文本、个人事务文书</strong>七个方向。每个方向的条款密度与审核节点差异明显：股权代持协议通常要处理显名条件与出资凭证，劳务分包合同更在意资质挂靠与结算周期，保密协议则卡在保密范围界定与违约计算方式上。</p>
+        <p>2026 年下半年比较集中的变化在用工侧。10 月下旬多地仲裁口径对“远程办公工时认定”给出了更细的举证要求，连带影响到劳动合同补充协议里考勤条款的写法。公司治理方向，《公司法》配套的章程示范文本在 9 月有过一轮修订，股东会通知期限与表决权回避的表述需要逐条核对旧模板。</p>
+        <p>知识产权条款的起草难点集中在软件委托开发。交付物范围、源代码托管触发条件、二次开发权利归属这三项，在 2026 年的委托开发纠纷里出现频率最高。行政规范文本方向则偏向格式统一，街道与园区层面的管理办法对条款编号和附件清单有固定要求。</p>
+        <p>个人事务文书里，遗嘱与意定监护的咨询量在 10 月明显上升，主要卡在见证人资格与财产清单的表述精度。总体看，条款示例的价值不在覆盖面，而在标注清楚适用边界与修订日期——同一份保密协议，2024 版和 2026 版在违约金计算基数上的写法已经不同。</p>
+      </div>
+    </section>
+
+    <!-- 2 精选内容推荐 -->
+    <section class="section" id="featured">
+      <div class="section-head"><h2>高频条款精选</h2><span class="sub">按场景检索</span></div>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-body">
+            <h3><a href="/#featured">劳务分包合同示范条款（2026修订）</a></h3>
+            <div class="tag-row"><span class="tag">合同条款</span><span class="tag accent">2026修订</span><span class="tag">结算周期</span></div>
+            <p class="card-desc">把资质审查、进度款支付节点、农民工工资专户三项拆成独立条款，附结算争议时的举证清单。适用于总包与专业作业队之间的分包场景。</p>
+            <div class="card-meta"><span>11月7日更新</span><b>9.2 分</b></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <h3><a href="/#featured">股权代持协议核心条款</a></h3>
+            <div class="tag-row"><span class="tag">公司治理</span><span class="tag">显名条件</span><span class="tag">出资凭证</span></div>
+            <p class="card-desc">重点处理代持关系与出资凭证的对应关系，写明显名请求的触发情形、其他股东优先购买权的排除方式，以及代持期间的收益分配口径。</p>
+            <div class="card-meta"><span>11月5日更新</span><b>8.9 分</b></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <h3><a href="/#featured">竞业限制协议：范围与补偿</a></h3>
+            <div class="tag-row"><span class="tag">劳动用工</span><span class="tag accent">仲裁口径</span><span class="tag">补偿标准</span></div>
+            <p class="card-desc">竞业范围按业务线而非公司注册地限定，补偿金按月支付比例写明。附 2026 年 10 月两起仲裁对“范围过宽”的认定差异对照。</p>
+            <div class="card-meta"><span>11月6日更新</span><b>9.0 分</b></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <h3><a href="/#featured">软件委托开发合同：交付物清单</a></h3>
+            <div class="tag-row"><span class="tag">知识产权</span><span class="tag">源代码托管</span><span class="tag">二次开发</span></div>
+            <p class="card-desc">交付物范围逐项列明，区分可运行版本、源代码与设计文档；源代码托管触发条件写成可核对的三个节点，避免“必要时”这类模糊措辞。</p>
+            <div class="card-meta"><span>11月4日更新</span><b>8.7 分</b></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <h3><a href="/#featured">保密协议：保密范围与例外</a></h3>
+            <div class="tag-row"><span class="tag">保密条款</span><span class="tag accent">违约计算</span><span class="tag">例外情形</span></div>
+            <p class="card-desc">保密信息按载体分类，口头披露要求 10 个工作日内书面确认。违约金基数写成“实际损失与许可费二者较高者”，并给出核算示例。</p>
+            <div class="card-meta"><span>11月3日更新</span><b>8.8 分</b></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <h3><a href="/#featured">公司章程股东会条款对照</a></h3>
+            <div class="tag-row"><span class="tag">公司治理</span><span class="tag">通知期限</span><span class="tag">表决权回避</span></div>
+            <p class="card-desc">按 2026 年 9 月修订的章程示范文本，逐条比对通知期限、临时提案门槛与关联股东回避的表决口径，标注哪些旧表述需要替换。</p>
+            <div class="card-meta"><span>11月2日更新</span><b>8.6 分</b></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3 最新更新 -->
+    <section class="section" id="updates">
+      <div class="section-head"><h2>条款模板更新速递</h2><span class="sub">按审校时间</span></div>
+      <ul class="update-list">
+        <li class="update-item"><span class="update-date">11月7日</span><div class="update-main"><h3><a href="/#updates">劳务分包合同示范条款（2026修订版）上线</a></h3><p>新增农民工工资专用账户条款与进度款支付节点表，附结算争议举证清单。</p></div></li>
+        <li class="update-item"><span class="update-date">11月6日</span><div class="update-main"><h3><a href="/#updates">竞业限制补偿标准对照表补录两起仲裁</a></h3><p>10 月 22 日与 10 月 29 日两起案件，对竞业范围按业务线限定的认定结果不一致。</p></div></li>
+        <li class="update-item"><span class="update-date">11月5日</span><div class="update-main"><h3><a href="/#updates">股权代持协议模板修订：显名条件细化</a></h3><p>把“条件成熟时”改成三个可核对节点：代持期满、其他股东书面同意、出资凭证核验完成。</p></div></li>
+        <li class="update-item"><span class="update-date">11月4日</span><div class="update-main"><h3><a href="/#updates">软件委托开发合同交付物清单更新</a></h3><p>源代码托管触发条件改为里程碑逾期 15 日、验收不通过两次、公司进入清算三项。</p></div></li>
+        <li class="update-item"><span class="update-date">11月3日</span><div class="update-main"><h3><a href="/#updates">保密协议违约金计算示例补录</a></h3><p>按实际损失与许可费二者较高者计算，附 3 个核算示例与举证材料顺序。</p></div></li>
+        <li class="update-item"><span class="update-date">11月2日</span><div class="update-main"><h3><a href="/#updates">公司章程股东会条款旧版对照发布</a></h3><p>逐条标注 2024 版与 2026 版差异，涉及通知期限、临时提案门槛、关联股东回避。</p></div></li>
+        <li class="update-item"><span class="update-date">10月30日</span><div class="update-main"><h3><a href="/#updates">意定监护协议财产清单表述规范</a></h3><p>财产清单按不动产、金融资产、负债三类分列，每类要求附权属凭证编号。</p></div></li>
+        <li class="update-item"><span class="update-date">10月28日</span><div class="update-main"><h3><a href="/#updates">园区管理办法格式模板：附件清单规范</a></h3><p>附件编号与正文条款编号对应，避免出现附件三对应条款七的错位情况。</p></div></li>
+      </ul>
+    </section>
+
+    <!-- 4 分类入口 -->
+    <section class="section" id="categories">
+      <div class="section-head"><h2>按场景进入分类</h2><span class="sub">8 个常用起草入口</span></div>
+      <div class="cat-grid">
+        <div class="cat-item"><h3>劳务分包与用工协议</h3><p>资质审查、工资专户、结算节点</p></div>
+        <div class="cat-item"><h3>股权代持与公司治理</h3><p>显名条件、出资凭证、表决回避</p></div>
+        <div class="cat-item"><h3>保密与竞业限制</h3><p>范围界定、补偿标准、违约计算</p></div>
+        <div class="cat-item"><h3>软件与知识产权委托</h3><p>交付物清单、源代码托管、权属</p></div>
+        <div class="cat-item"><h3>公司章程与决议文件</h3><p>通知期限、临时提案、议事规则</p></div>
+        <div class="cat-item"><h3>行政规范与园区办法</h3><p>条款编号、附件清单、格式统一</p></div>
+        <div class="cat-item"><h3>遗嘱与意定监护</h3><p>见证人资格、财产清单、表述精度</p></div>
+        <div class="cat-item"><h3>采购与供货框架协议</h3><p>验收标准、质量异议期、退换条款</p></div>
+      </div>
+    </section>
+
+    <!-- 5 深度解析 -->
+    <section class="section" id="deep">
+      <div class="section-head"><h2>条款起草的四个判断面</h2><span class="sub">以 2026 年下半年案例为样本</span></div>
+      <article class="article-deep">
+        <h3>一、把“可核对”写进条款，比写“合理”更有用</h3>
+        <p>2026 年 10 月 22 日，某地仲裁委处理了一起竞业限制补偿争议。申请人主张协议约定的“按月支付合理补偿”未落实，被申请人则称已按基本工资 30% 发放。<strong>争议焦点落在“合理”二字</strong>：协议没写基数、没写支付日，双方各执一词。仲裁结果支持按离职前 12 个月平均工资的 30% 补足差额，理由是该口径在同期同类案件里出现频次最高。</p>
+        <p>对照 10 月 29 日的另一起案件，协议写明“按离职前 12 个月平均工资的 30%，每月 15 日前支付”，争议只涉及计算基数是否含年终奖，审理周期缩短了将近一半。两份协议的差别不在条款数量，而在<strong>可核对信息的密度</strong>：有没有具体基数、有没有支付日、有没有计算示例。</p>
+        <div class="callout">起草时可以把判断拆成三层核对：一是数额是否有基数，二是时间是否有节点，三是例外是否有清单。三层都写清，争议空间就收窄。</div>
+
+        <h3>二、保密范围按载体分类，比按主题罗列更稳</h3>
+        <p>保密协议常见的写法是列主题，比如“技术信息、经营信息、客户名单”。问题在于，主题是开区间，争议时双方对某份文件是否属于“经营信息”各执一词。2026 年 9 月一份软件外包保密协议的处理思路值得参考：按<strong>载体</strong>分类——书面文档、电子文件、口头披露、演示材料，每类写明标注方式与确认流程。</p>
+        <p>口头披露这一项最容易漏。该协议要求披露方在 10 个工作日内以邮件书面确认，未确认的口头信息不进入保密范围。这个条款把举证责任前移到披露时点，接收方不必在纠纷发生后再去论证“哪句话算保密信息”。</p>
+        <table class="compare-table">
+          <thead><tr><th>写法</th><th>争议点</th><th>举证难度</th></tr></thead>
+          <tbody>
+            <tr><td>按主题罗列</td><td>某文件是否属于“经营信息”</td><td>高，需解释主题边界</td></tr>
+            <tr><td>按载体分类</td><td>某文件是否履行了标注或确认</td><td>中，看标注与邮件记录</td></tr>
+            <tr><td>按项目清单</td><td>清单外新增文件是否覆盖</td><td>低，但需定期更新清单</td></tr>
+          </tbody>
+        </table>
+
+        <h3>三、违约金的写法，决定争议的走向</h3>
+        <p>违约金条款的常见毛病是只写一个数字，不写计算方式。2026 年 10 月一份供货框架协议的争议里，双方对“逾期交货违约金按日万分之五”没有异议，但对<strong>计算基数是单批货款还是合同总额</strong>争了两轮。协议原文写“合同金额”，而合同金额本身又区分框架上限与实际订单额。</p>
+        <p>相对稳的写法是把基数、起算点、封顶线三样写全。基数取“该批次订单金额”，起算点取“约定交付日次日起”，封顶线取“该批次订单金额的 20%”。三样都写，争议通常只剩事实认定，不再纠缠条款解释。另一个可加的动作是附一个计算示例，把数字代进去算一遍，让双方在签署时就对结果有预期。</p>
+
+        <h3>四、旧模板复用的风险，集中在修订日期</h3>
+        <p>2026 年 9 月公司章程示范文本修订后，通知期限与临时提案门槛都有调整。同期不少团队直接拿 2024 版改几个字就用，结果在股东会召集程序上留下瑕疵。核对旧模板时，优先看三类条款：<strong>期限类、门槛类、回避类</strong>。期限看天数是否变化，门槛看持股比例是否调整，回避看关联股东的认定范围是否扩大。</p>
+        <p>一个可操作的检查顺序是：先比对目录结构，再逐条看数字型表述，最后核对附件与正文的编号对应。前两步能筛出大部分问题，第三步处理的是格式层面的错位——附件三对应条款七这类情况，在园区管理办法里尤其常见。</p>
+      </article>
+    </section>
+
+    <!-- 6 体验指南 -->
+    <section class="section" id="guide">
+      <div class="section-head"><h2>起草一份协议的阅读顺序</h2><span class="sub">从判断场景到落笔</span></div>
+      <ol class="steps">
+        <li><strong>先定场景，再选模板。</strong>劳务分包和采购供货都涉及结算，但前者要处理资质与工资专户，后者要处理验收与质量异议期。场景错，条款再多也对不上。</li>
+        <li><strong>核对模板修订日期。</strong>2026 年 9 月之后修订的公司章程与 10 月之后的用工类协议，与旧版在期限和门槛上有差异。日期早于修订点的模板，先看差异对照再决定是否复用。</li>
+        <li><strong>把可核对信息填满。</strong>数额写基数，时间写节点，例外写清单。这三样填满，条款解释空间自然收窄。</li>
+        <li><strong>用计算示例自测。</strong>把违约金、补偿金、逾期利息各代一组数字算一遍。算出来的结果如果连自己都觉得意外，说明基数或封顶线需要调整。</li>
+        <li><strong>最后核对附件与编号。</strong>正文条款号与附件编号一一对应，格式类问题留到最后一步处理，效率更高。</li>
+      </ol>
+    </section>
+
+    <!-- 7 FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head"><h2>起草常见问答</h2><span class="sub">6 个高频疑问</span></div>
+      <div class="faq-list">
+        <details>
+          <summary>竞业限制补偿金按什么基数计算？</summary>
+          <div class="faq-body"><p>常见口径是离职前 12 个月平均工资的 30%，且不低于当地最低工资标准。2026 年 10 月 22 日的一起仲裁案里，协议只写“合理补偿”，仲裁委按上述比例补足差额。写明基数与支付日，能显著减少争议。</p></div>
+        </details>
+        <details>
+          <summary>股权代持协议的显名条件怎么写才不空泛？</summary>
+          <div class="faq-body"><p>把“条件成熟”拆成可核对节点：代持期满、其他股东书面放弃优先购买权、出资凭证核验完成。三个节点各自对应一份书面材料，缺一项就不触发显名流程。</p></div>
+        </details>
+        <details>
+          <summary>保密协议里口头披露的信息受保护吗？</summary>
+          <div class="faq-body"><p>取决于协议是否约定确认流程。按载体分类的写法通常要求披露方在 10 个工作日内以邮件书面确认，未确认的口头信息不进入保密范围。没有这条约定，口头信息在争议中很难举证。</p></div>
+        </details>
+        <details>
+          <summary>软件委托开发的源代码托管什么时候触发？</summary>
+          <div class="faq-body"><p>可写成三个触发节点：里程碑逾期 15 日、验收连续两次不通过、开发方进入清算程序。任一节点满足，委托方即可要求交付托管源代码。触发条件写成“必要时”会导致条款难以执行。</p></div>
+        </details>
+        <details>
+          <summary>违约金只写一个数字有什么问题？</summary>
+          <div class="faq-body"><p>数字本身不说明计算基数。2026 年 10 月一份供货框架协议的争议里，双方对“逾期交货按日万分之五”没有异议，但对基数是单批货款还是合同总额争论两轮。基数、起算点、封顶线三样写全，争议通常只剩事实认定。</p></div>
+        </details>
+        <details>
+          <summary>旧版章程模板还能直接用吗？</summary>
+          <div class="faq-body"><p>2026 年 9 月修订后，通知期限、临时提案门槛、关联股东回避范围有调整。直接复用 2024 版改字，可能在股东会召集程序上留瑕疵。核对时优先看期限类、门槛类、回避类三组条款。</p></div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8 用户评论 -->
+    <section class="section" id="comments">
+      <div class="section-head"><h2>起草者与审核者的留言</h2><span class="sub">18 条</span></div>
+      <div class="comment-grid">
+        <div class="comment"><div class="cm-head"><span class="cm-name">周律不熬夜</span><span class="cm-time">11月7日</span></div><p>劳务分包那份把工资专户单独拎出来写，比之前看的几版清楚。结算节点表也实用，直接照着填。</p></div>
+        <div class="comment"><div class="cm-head"><span class="cm-name">合规小赵</span><span class="cm-time">11月7日</span></div><p>竞业限制补偿 30% 这个口径，10 月两起案子结果不太一样，模板里把差异标出来了，这点省事。</p></div>
+        <div class="comment"><div class="cm-head"><span class="cm-name">南山旧账</span><span class="cm-time">11月6日</span></div><p>股权代持显名条件改成三个节点，比“条件成熟”强太多。之前吃过亏，就是卡在没写清哪个节点算数。</p></div>
+        <div class="comment"><div class="cm-head"><span class="cm-name">阿澈在写稿</span><span class="cm-time">11月6日</span></div><p>保密协议按载体分类这个思路第一次见。口头披露要邮件确认，这条得加进我们的模板。</p></div>
+        <div class="comment"><div class="cm-head"><span class="cm-name">老吴审合同</span><span class="cm-time">11月5日</span></div><p>违约金写基数、起算点、封顶线，看着简单，实际能省掉一半扯皮。供货框架那篇分析讲得细。</p></div>
+        <div class="comment"><div class="cm-head"><span class="cm-name">林间有风</span><span class="cm-time">11月5日</span></div><p>章程模板那版对照，2024 到 2026 改了哪些一目了然。临时提案门槛那条差点漏掉。</p></div>
+        <div class="comment"><div class="cm-head"><span class="cm-name">小满忙归档</span><span class="cm-time">11月4日</span></div><p>软件开发的交付物清单，源代码托管触发条件写三个节点，终于不用跟对方解释“必要时”是啥意思了。</p></div>
+        <div class="comment"><div class="cm-head"><span class="cm-name">陈默不默</span><span class="cm-time">11月4日</span></div><p>附件和条款编号错位这个毛病，园区办法里太常见了。清单规范那篇提醒得对。</p></div>
+        <div class="comment"><div class="cm-head"><span class="cm-name">北屿法务</span><span class="cm-time">11月3日</span></div><p>意定监护的财产清单按三类分列，比笼统写“全部财产”强。见证人资格那块还能再补点。</p></div>
+        <div class="comment"><div class="cm-head"><span class="cm-name">咸鱼改稿中</span><span class="cm-time">11月3日</span></div><p>今天照着违约计算示例代了一遍数字，发现原来的封顶线设高了，差点踩坑。</p></div>
+        <div class="comment"><div class="cm-head"><span class="cm-name">陆工看条款</span><span class="cm-time">11月2日</span></div><p>采购供货的质量异议期，模板里写 15 个工作日，实际项目里经常不够。这条得结合验收流程调。</p></div>
+        <div class="comment"><div class="cm-head"><span class="cm-name">周末补觉</span><span class="cm-time">11月2日</span></div><p>深度解析里“可核对信息密度”这个说法挺准。写条款不是字数越多越好，是能核对的东西越多越好。</p></div>
+        <div class="comment"><div class="cm-head"><span class="cm-name">麦田守望者</span><span class="cm-time">11月1日</span></div><p>最近在弄股权代持，显名条件写三个节点之后，对方反而没那么多异议了。有点意外。</p></div>
+        <div class="comment"><div class="cm-head"><span class="cm-name">安和桥北</span><span class="cm-time">11月1日</span></div><p>保密协议违约按实际损失与许可费较高者算，这条在实操里举证还是难。有核算示例参考好一些。</p></div>
+        <div class="comment"><div class="cm-head"><span class="cm-name">半个同行</span><span class="cm-time">10月31日</span></div><p>劳务分包的资质审查条款，写得比较保守，实际项目里挂靠情况复杂，照搬要谨慎。</p></div>
+        <div class="comment"><div class="cm-head"><span class="cm-name">不署名的小李</span><span class="cm-time">10月31日</span></div><p>竞业范围按业务线限定这个思路，10 月两起仲裁结果不一致，说明还是得看具体证据。模板提醒到位。</p></div>
+        <div class="comment"><div class="cm-head"><span class="cm-name">打字机修理工</span><span class="cm-time">10月30日</span></div><p>今天天气不错，适合改合同（不是）。说正经的，章程对照那篇省了我半天翻阅时间。</p></div>
+        <div class="comment"><div class="cm-head"><span class="cm-name">南山客</span><span class="cm-time">10月30日</span></div><p>遗嘱见证人资格那块讲得还行，但没提代书遗嘱的具体格式要求，希望后续补上。</p></div>
+      </div>
+    </section>
+
+    <!-- 9 相关资讯 -->
+    <section class="section" id="news">
+      <div class="section-head"><h2>近期条款与裁判动态</h2><span class="sub">2026-10-09 至 2026-11-07</span></div>
+      <ul class="news-list">
+        <li class="news-item"><h3><a href="/#news">竞业限制补偿认定：10 月两起仲裁结果不一</a></h3><div class="news-meta">2026年11月6日 · 裁判观察</div><p>10 月 22 日案件按离职前平均工资 30% 补足差额，10 月 29 日案件认定按业务线限定范围有效。两案争议焦点均在协议是否写明计算基数。</p></li>
+        <li class="news-item"><h3><a href="/#news">公司章程示范文本修订满两个月，旧版复用问题集中</a></h3><div class="news-meta">2026年11月4日 · 公司治理</div><p>9 月修订后，临时提案门槛由 3% 调整为 1%，通知期限由 15 日调整为 10 日。10 月下旬多家企业的股东会召集程序因此出现瑕疵。</p></li>
+        <li class="news-item"><h3><a href="/#news">软件委托开发纠纷：源代码托管触发条件成焦点</a></h3><div class="news-meta">2026年11月2日 · 知识产权</div><p>10 月判决的三起案件中，两起因协议只写“必要时交付源代码”而未约定触发节点，委托方主张未获支持。</p></li>
+        <li class="news-item"><h3><a href="/#news">供货框架协议违约金基数争议增多</a></h3><div class="news-meta">2026年10月30日 · 合同条款</div><p>10 月受理的供货类纠纷里，逾期交货违约金的基数认定争议占比上升。单批货款与合同总额两种口径均有出现。</p></li>
+        <li class="news-item"><h3><a href="/#news">意定监护咨询量上升，财产清单表述精度受关注</a></h3><div class="news-meta">2026年10月27日 · 个人事务</div><p>10 月咨询中，超过六成涉及财产清单如何分列。不动产、金融资产、负债三类分列并附权属凭证编号的写法被多次提及。</p></li>
+        <li class="news-item"><h3><a href="/#news">园区管理办法格式规范更新：附件编号须对应条款号</a></h3><div class="news-meta">2026年10月24日 · 行政规范</div><p>10 月下旬发布的格式指引要求附件编号与正文条款编号一一对应，附件三对应条款七的错位情况被列为常见退回原因。</p></li>
+      </ul>
+    </section>
+
+    <!-- 10 相关推荐 -->
+    <section class="section" id="recommend">
+      <div class="section-head"><h2>相关起草方向</h2><span class="sub">按内容方向索引</span></div>
+      <div class="tag-index">
+        <a href="/#recommend">农民工工资专户条款</a>
+        <a href="/#recommend">显名请求触发节点</a>
+        <a href="/#recommend">竞业补偿计算基数</a>
+        <a href="/#recommend">源代码托管三节点</a>
+        <a href="/#recommend">违约金封顶线写法</a>
+        <a href="/#recommend">章程临时提案门槛</a>
+        <a href="/#recommend">意定监护财产清单</a>
+        <a href="/#recommend">验收与质量异议期</a>
+      </div>
+    </section>
+
+    <!-- 11 补充板块：热门榜单 -->
+    <section class="section" id="charts">
+      <div class="section-head"><h2>本月条款查阅排行</h2><span class="sub">2026-10-09 至 2026-11-07</span></div>
+      <div class="side-panel" style="position:static">
+        <ol class="rank-list">
+          <li><a href="/#charts">劳务分包合同示范条款（2026修订版）</a><span class="r-meta">查阅 4,820 次 · 11月7日更新</span></li>
+          <li><a href="/#charts">竞业限制协议：范围与补偿</a><span class="r-meta">查阅 3,960 次 · 11月6日更新</span></li>
+          <li><a href="/#charts">股权代持协议核心条款</a><span class="r-meta">查阅 3,410 次 · 11月5日更新</span></li>
+          <li><a href="/#charts">保密协议：保密范围与例外</a><span class="r-meta">查阅 2,870 次 · 11月3日更新</span></li>
+          <li><a href="/#charts">软件委托开发合同交付物清单</a><span class="r-meta">查阅 2,450 次 · 11月4日更新</span></li>
+          <li><a href="/#charts">公司章程股东会条款对照</a><span class="r-meta">查阅 2,180 次 · 11月2日更新</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 12 投稿互动 -->
+    <section class="section" id="contribute">
+      <div class="section-head"><h2>模板投稿与审校互动</h2><span class="sub">参与条款共建</span></div>
+      <div class="interact-box" style="background:var(--panel);color:var(--ink-2);border:1px solid var(--line)">
+        <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;margin-bottom:14px">
+          <div style="flex:1;min-width:220px">
+            <h3 style="font-size:16px;color:var(--brand);margin-bottom:6px">上传你手头的条款版本</h3>
+            <p style="font-size:13px;color:var(--ink-3);margin:0">投稿内容经审校后进入模板库，标注修订日期与适用边界。格式不限，注明场景与来源即可。</p>
+          </div>
+          <div class="interact-stats" style="margin:0">
+            <div><b>128</b><span>本月投稿</span></div>
+            <div><b>41</b><span>已审校入库</span></div>
+            <div><b>7</b><span>待补充材料</span></div>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn-primary" type="button" id="uploadBtn" style="flex:1;min-width:140px">上传条款模板</button>
+          <button class="btn-accent" type="button" id="joinReviewBtn" style="flex:1;min-width:140px">申请参与审校</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右侧辅助栏 -->
+  <aside class="side-col" aria-label="辅助信息">
+    <div class="side-panel">
+      <h2>今日审校提示</h2>
+      <ul style="list-style:none;margin:0;padding:0;font-size:13px;color:var(--ink-2);display:flex;flex-direction:column;gap:9px">
+        <li>• 竞业限制协议核对补偿基数是否写明</li>
+        <li>• 劳务分包确认工资专户条款已附</li>
+        <li>• 章程模板检查临时提案门槛天数</li>
+        <li>• 保密协议补充口头披露确认流程</li>
+      </ul>
+    </div>
+    <div class="side-panel">
+      <h2>常用工具入口</h2>
+      <ul style="list-style:none;margin:0;padding:0;font-size:13px;display:flex;flex-direction:column;gap:8px">
+        <li><a href="/#guide">条款阅读顺序清单</a></li>
+        <li><a href="/#faq">起草常见问答</a></li>
+        <li><a href="/#charts">本月查阅排行</a></li>
+        <li><a href="/#contribute">模板投稿通道</a></li>
+      </ul>
+    </div>
+    <div class="side-panel">
+      <h2>审校节奏</h2>
+      <p style="font-size:12.5px;color:var(--ink-3);margin:0">工作日每日更新 1—2 份条款示例，周五发布本周差异对照。修订日期以页面标注为准。</p>
+    </div>
+  </aside>
+
+</div>
+
+<!-- 页脚 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-text">17.c 起草口</span>
+      <p>覆盖 2024—2026 年条款模板，以合同、章程、用工协议与知识产权文书为主，每周五发布修订差异对照。</p>
+      <p>示例数据与条款文本仅作起草参考，不构成法律意见。</p>
+    </div>
+    <div class="footer-col">
+      <h3>起草方向</h3>
+      <a href="/#categories">劳务分包与用工</a>
+      <a href="/#categories">股权代持与治理</a>
+      <a href="/#categories">保密与竞业限制</a>
+      <a href="/#categories">软件与知识产权</a>
+    </div>
+    <div class="footer-col">
+      <h3>内容类型</h3>
+      <a href="/#featured">条款精选</a>
+      <a href="/#updates">更新速递</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#news">裁判动态</a>
+    </div>
+    <div class="footer-col">
+      <h3>参与</h3>
+      <a href="/#contribute">模板投稿</a>
+      <a href="/#contribute">参与审校</a>
+      <a href="/#comments">用户留言</a>
+      <a href="/#faq">常见问答</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 17.c 起草口 · 内容聚合示例页</span>
+    <span>最近更新：2026年11月7日 · 劳务分包合同示范条款（2026修订版）</span>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var stickyH = 96;
+  // 汉堡菜单
+  var hamburger = document.getElementById('hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', function(){
+    var open = mobileNav.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileNav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      mobileNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded','false');
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      mobileNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded','false');
+    }
+  });
+
+  // 搜索
+  var input = document.getElementById('siteSearch');
+  var feedback = document.getElementById('searchFeedback');
+  var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    if(!q){ feedback.classList.remove('show'); feedback.textContent=''; return; }
+    var hits = [];
+    sections.forEach(function(sec){
+      var text = sec.textContent.toLowerCase();
+      if(text.indexOf(q) !== -1){
+        var h2 = sec.querySelector('h2');
+        hits.push(h2 ? h2.textContent : sec.id);
+      }
+    });
+    feedback.classList.add('show');
+    if(hits.length){
+      feedback.innerHTML = '找到 ' + hits.length + ' 个板块：' + hits.slice(0,4).join('、');
+    } else {
+      feedback.textContent = '未找到匹配内容，换个关键词试试。';
+    }
+  });
+
+  // 返回顶部
+  var backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', function(){
+    backTop.classList.toggle('show', window.scrollY > window.innerHeight);
+  }, {passive:true});
+  backTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // 侧栏频道高亮
+  var channelLinks = document.querySelectorAll('#channelList a');
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var id = entry.target.id;
+        channelLinks.forEach(function(a){
+          a.classList.toggle('active', a.getAttribute('href') === '/#' + id);
+        });
+      }
+    });
+  }, {rootMargin: '-100px 0px -60% 0px'});
+  sections.forEach(function(sec){ observer.observe(sec); });
+
+  // 按钮占位反馈（不跳转虚构页面）
+  var contributeBtn = document.getElementById('contributeBtn');
+  var uploadBtn = document.getElementById('uploadBtn');
+  var joinReviewBtn = document.getElementById('joinReviewBtn');
+  function toast(msg){
+    var t = document.createElement('div');
+    t.textContent = msg;
+    t.style.cssText = 'position:fixed;left:50%;bottom:30px;transform:translateX(-50%);background:#1e3a5f;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:200;box-shadow:0 6px 18px rgba(0,0,0,.2)';
+    document.body.appendChild(t);
+    setTimeout(function(){ t.remove(); }, 2200);
+  }
+  contributeBtn.addEventListener('click', function(){ toast('投稿入口示意：请通过页尾联系方式提交条款文本'); });
+  uploadBtn.addEventListener('click', function(){ toast('上传功能示意：请通过页尾联系方式提交条款文本'); });
+  joinReviewBtn.addEventListener('click', function(){ toast('审校申请示意：请通过页尾联系方式提交申请'); });
+})();
+</script>
+
+<!-- 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "17.c 起草口",
+  "description": "聚焦合同条款、协议模板、规章制度等文书起草场景，收录条款示例、格式规范、审核要点与常见争议解析。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "竞业限制补偿金按什么基数计算？",
+      "acceptedAnswer": {"@type": "Answer", "text": "常见口径是离职前12个月平均工资的30%，且不低于当地最低工资标准。2026年10月22日的一起仲裁案里，协议只写“合理补偿”，仲裁委按上述比例补足差额。"}
+    },
+    {
+      "@type": "Question",
+      "name": "股权代持协议的显名条件怎么写才不空泛？",
+      "acceptedAnswer": {"@type": "Answer", "text": "把“条件成熟”拆成可核对节点：代持期满、其他股东书面放弃优先购买权、出资凭证核验完成。"}
+    },
+    {
+      "@type": "Question",
+      "name": "保密协议里口头披露的信息受保护吗？",
+      "acceptedAnswer": {"@type": "Answer", "text": "取决于协议是否约定确认流程。按载体分类的写法通常要求披露方在10个工作日内以邮件书面确认，未确认的口头信息不进入保密范围。"}
+    },
+    {
+      "@type": "Question",
+      "name": "软件委托开发的源代码托管什么时候触发？",
+      "acceptedAnswer": {"@type": "Answer", "text": "可写成三个触发节点：里程碑逾期15日、验收连续两次不通过、开发方进入清算程序。"}
+    },
+    {
+      "@type": "Question",
+      "name": "违约金只写一个数字有什么问题？",
+      "acceptedAnswer": {"@type": "Answer", "text": "数字本身不说明计算基数。2026年10月一份供货框架协议的争议里，双方对“逾期交货按日万分之五”没有异议，但对基数是单批货款还是合同总额争论两轮。"}
+    },
+    {
+      "@type": "Question",
+      "name": "旧版章程模板还能直接用吗？",
+      "acceptedAnswer": {"@type": "Answer", "text": "2026年9月修订后，通知期限、临时提案门槛、关联股东回避范围有调整。直接复用2024版改字，可能在股东会召集程序上留瑕疵。"}
+    }
+  ]
+}
+</script>
+
+</body>
+          </html>
