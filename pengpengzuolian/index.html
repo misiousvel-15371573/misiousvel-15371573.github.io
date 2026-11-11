@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>芃芃坐脸vk - 精选视频与创作者动态聚合</title>
+<meta name="description" content="芃芃坐脸vk 内容聚合页，汇集创作者芃芃的坐脸视频、直播回放、幕后花絮与粉丝二创。适合关注互动视频、生活向直播切片与创作者日常的观众浏览。">
+<meta name="keywords" content="芃芃坐脸vk">
+<style>
+  :root {
+    --c-primary: #7b4b3a;
+    --c-primary-light: #a9745c;
+    --c-primary-dark: #4f2e22;
+    --c-accent: #d98e5f;
+    --c-bg: #faf6f2;
+    --c-surface: #ffffff;
+    --c-text-1: #2e211c;
+    --c-text-2: #5c4a42;
+    --c-text-3: #8a7a72;
+    --c-line: #e8ddd5;
+    --radius-card: 14px;
+    --radius-btn: 8px;
+    --radius-tag: 20px;
+    --radius-banner: 10px;
+    --shadow-default: 0 2px 8px rgba(80,45,30,0.06);
+    --shadow-hover: 0 6px 18px rgba(80,45,30,0.12);
+    --font-sans: "PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    --sticky-offset: 96px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--c-bg);
+    color: var(--c-text-1);
+    line-height: 1.7;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  img { display: block; max-width: 100%; }
+
+  .container {
+    width: min(1360px, 94%);
+    margin: 0 auto;
+  }
+
+  /* ---------- 吸顶公告条 + 页头 ---------- */
+  .sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .announce-bar {
+    background: var(--c-primary-dark);
+    color: #f5e9e2;
+    font-size: 13px;
+    padding: 7px 0;
+    overflow: hidden;
+  }
+
+  .announce-inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .announce-brand {
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  .announce-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255,255,255,0.12);
+    padding: 2px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .announce-item .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--c-accent);
+    flex-shrink: 0;
+  }
+
+  .site-header {
+    background: rgba(250,246,242,0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--c-line);
+    padding: 10px 0;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--c-primary-dark);
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+  }
+
+  .logo svg { width: 30px; height: 30px; }
+
+  .main-nav {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+
+  .main-nav a {
+    font-size: 14px;
+    padding: 5px 11px;
+    border-radius: var(--radius-btn);
+    color: var(--c-text-2);
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+
+  .main-nav a:hover, .main-nav a:focus-visible {
+    background: var(--c-primary-light);
+    color: #fff;
+    outline: none;
+  }
+
+  .header-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 7px 16px;
+    border-radius: var(--radius-btn);
+    font-size: 13.5px;
+    font-weight: 600;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    font-family: var(--font-sans);
+    line-height: 1.4;
+  }
+
+  .btn:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
+
+  .btn-primary {
+    background: var(--c-primary);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--c-primary-dark); box-shadow: var(--shadow-hover); transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--c-primary);
+    border-color: var(--c-primary-light);
+  }
+  .btn-outline:hover { background: var(--c-primary-light); color: #fff; }
+
+  .hamburger {
+    display: none;
+    background: none;
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-btn);
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--c-text-1);
+    line-height: 1;
+  }
+
+  .mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 90;
+  }
+
+  /* ---------- 首屏 ---------- */
+  .hero {
+    position: relative;
+    padding: 44px 0 36px;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 600px 320px at 88% 15%, rgba(217,142,95,0.18), transparent 70%),
+      radial-gradient(ellipse 520px 280px at 12% 80%, rgba(123,75,58,0.10), transparent 70%),
+      var(--c-bg);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 36px;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 900;
+    color: var(--c-primary-dark);
+    letter-spacing: 1px;
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+
+  .hero-desc {
+    font-size: 15.5px;
+    color: var(--c-text-2);
+    max-width: 560px;
+    margin-bottom: 22px;
+    line-height: 1.8;
+  }
+
+  .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+
+  .hero-stats {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--c-text-3);
+  }
+  .hero-stats strong {
+    display: block;
+    font-size: 19px;
+    color: var(--c-primary);
+    font-weight: 800;
+  }
+
+  .hero-visual {
+    position: relative;
+    height: 240px;
+    border-radius: var(--radius-banner);
+    background: linear-gradient(135deg, #f3e2d6 0%, #e8cbb8 100%);
+    box-shadow: var(--shadow-default);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-visual svg { width: 82%; height: auto; }
+
+  .hero-visual::after {
+    content: "";
+    position: absolute;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    border: 2px dashed rgba(123,75,58,0.22);
+    right: -40px; bottom: -50px;
+    animation: spin 40s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-visual::after { animation: none; }
+    html { scroll-behavior: auto; }
+    * { transition-duration: 0.01ms !important; }
+  }
+
+  /* ---------- 主布局：三栏门户 ---------- */
+  .layout {
+    display: grid;
+    grid-template-columns: 180px minmax(0,1fr) 250px;
+    gap: 26px;
+    padding: 30px 0 50px;
+    align-items: start;
+  }
+
+  .side-nav {
+    position: sticky;
+    top: var(--sticky-offset);
+    background: var(--c-surface);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-card);
+    padding: 14px 0;
+    box-shadow: var(--shadow-default);
+  }
+
+  .side-nav h3 {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--c-text-3);
+    text-transform: uppercase;
+    padding: 0 16px 8px;
+    font-weight: 700;
+  }
+
+  .side-nav a {
+    display: block;
+    padding: 7px 16px;
+    font-size: 14px;
+    color: var(--c-text-2);
+    border-left: 3px solid transparent;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+
+  .side-nav a:hover, .side-nav a:focus-visible, .side-nav a.active {
+    background: #f6ece5;
+    color: var(--c-primary-dark);
+    border-left-color: var(--c-accent);
+    outline: none;
+  }
+
+  .main-col { min-width: 0; }
+
+  .aside-col {
+    position: sticky;
+    top: var(--sticky-offset);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .panel {
+    background: var(--c-surface);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-card);
+    padding: 16px;
+    box-shadow: var(--shadow-default);
+  }
+
+  .panel h3 {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--c-primary-dark);
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--c-line);
+  }
+
+  .hot-list li {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    padding: 5px 0;
+    font-size: 13.5px;
+    color: var(--c-text-2);
+  }
+  .hot-list .rank {
+    font-weight: 800;
+    color: var(--c-accent);
+    font-size: 12px;
+    min-width: 18px;
+  }
+  .hot-list .meta { color: var(--c-text-3); font-size: 11.5px; margin-left: auto; white-space: nowrap; }
+
+  .update-feed li {
+    padding: 7px 0;
+    border-bottom: 1px dashed var(--c-line);
+    font-size: 13px;
+    color: var(--c-text-2);
+  }
+  .update-feed li:last-child { border-bottom: none; }
+  .update-feed .u-time { color: var(--c-text-3); font-size: 11.5px; display: block; }
+
+  /* ---------- 板块通用 ---------- */
+  .section {
+    background: var(--c-surface);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-card);
+    padding: 24px 24px 26px;
+    margin-bottom: 26px;
+    box-shadow: var(--shadow-default);
+    scroll-margin-top: var(--sticky-offset);
+  }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+
+  .section h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--c-primary-dark);
+    letter-spacing: 0.3px;
+  }
+
+  .section-sub {
+    font-size: 13px;
+    color: var(--c-text-3);
+  }
+
+  .lead-text {
+    font-size: 14.5px;
+    color: var(--c-text-2);
+    line-height: 1.85;
+  }
+  .lead-text p + p { margin-top: 10px; }
+
+  /* 卡片网格 */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+
+  .card-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    background: #f0e6df;
+  }
+
+  .card-body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+
+  .card-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--c-text-1);
+    line-height: 1.4;
+  }
+
+  .tag-row { display: flex; flex-wrap: wrap; gap: 5px; }
+
+  .tag {
+    font-size: 11px;
+    padding: 1px 8px;
+    border-radius: var(--radius-tag);
+    background: #f6ece5;
+    color: var(--c-primary);
+    white-space: nowrap;
+  }
+  .tag.accent { background: var(--c-primary); color: #fff; }
+
+  .card-desc {
+    font-size: 12.5px;
+    color: var(--c-text-2);
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .card-meta {
+    font-size: 11.5px;
+    color: var(--c-text-3);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--c-line);
+    padding-top: 7px;
+    margin-top: 2px;
+  }
+
+  /* 紧凑列表 */
+  .compact-list li {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--c-line);
+    font-size: 14px;
+  }
+  .compact-list li:last-child { border-bottom: none; }
+  .compact-list .cl-title { font-weight: 600; color: var(--c-text-1); min-width: 0; }
+  .compact-list .cl-desc { font-size: 12.5px; color: var(--c-text-3); }
+  .compact-list .cl-date { margin-left: auto; font-size: 12px; color: var(--c-text-3); white-space: nowrap; flex-shrink: 0; }
+
+  /* 分类入口 */
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+  }
+  .cat-item {
+    display: block;
+    padding: 13px 14px;
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-btn);
+    background: #fdfaf8;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .cat-item:hover, .cat-item:focus-visible {
+    background: #f6ece5;
+    border-color: var(--c-primary-light);
+    outline: none;
+  }
+  .cat-item strong { display: block; font-size: 14px; color: var(--c-primary-dark); }
+  .cat-item span { font-size: 12px; color: var(--c-text-3); }
+
+  /* 深度解析 */
+  .deep-article h3 {
+    font-size: 16.5px;
+    font-weight: 800;
+    color: var(--c-primary-dark);
+    margin: 22px 0 8px;
+    padding-left: 10px;
+    border-left: 3px solid var(--c-accent);
+  }
+  .deep-article h3:first-of-type { margin-top: 0; }
+  .deep-article p { font-size: 14.5px; color: var(--c-text-2); line-height: 1.9; margin-bottom: 10px; }
+  .deep-article ul { margin: 8px 0 12px 20px; list-style: disc; }
+  .deep-article li { font-size: 14px; color: var(--c-text-2); line-height: 1.8; margin-bottom: 4px; }
+
+  /* FAQ */
+  details.faq-item {
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-btn);
+    margin-bottom: 10px;
+    background: #fdfaf8;
+    overflow: hidden;
+  }
+  details.faq-item summary {
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--c-text-1);
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 36px;
+  }
+  details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: var(--c-primary-light);
+    font-weight: 400;
+  }
+  details.faq-item[open] summary::after { content: "−"; }
+  details.faq-item .faq-answer {
+    padding: 0 16px 14px;
+    font-size: 13.5px;
+    color: var(--c-text-2);
+    line-height: 1.8;
+  }
+
+  /* 评论 */
+  .comment-list { display: flex; flex-direction: column; gap: 0; }
+  .comment {
+    padding: 11px 0;
+    border-bottom: 1px solid var(--c-line);
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+  .comment:last-child { border-bottom: none; }
+  .comment .c-user {
+    font-weight: 700;
+    color: var(--c-primary);
+    margin-right: 8px;
+    font-size: 13px;
+  }
+  .comment .c-time { color: var(--c-text-3); font-size: 11.5px; margin-left: 8px; }
+  .comment .c-text { color: var(--c-text-2); display: inline; }
+
+  /* 资讯 */
+  .news-item {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--c-line);
+  }
+  .news-item:last-child { border-bottom: none; }
+  .news-date {
+    font-size: 12px;
+    color: var(--c-text-3);
+    padding-top: 2px;
+  }
+  .news-title { font-size: 14.5px; font-weight: 700; color: var(--c-text-1); margin-bottom: 3px; }
+  .news-summary { font-size: 13px; color: var(--c-text-2); line-height: 1.7; }
+
+  /* 推荐标签索引 */
+  .tag-index { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag-index a {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: var(--radius-tag);
+    border: 1px solid var(--c-line);
+    background: #fdfaf8;
+    font-size: 13px;
+    color: var(--c-text-2);
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .tag-index a:hover, .tag-index a:focus-visible {
+    background: var(--c-primary);
+    color: #fff;
+    border-color: var(--c-primary);
+    outline: none;
+  }
+
+  /* 榜单 */
+  .rank-list { counter-reset: rk; }
+  .rank-list li {
+    counter-increment: rk;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px dashed var(--c-line);
+    font-size: 14px;
+  }
+  .rank-list li:last-child { border-bottom: none; }
+  .rank-list li::before {
+    content: counter(rk);
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--c-accent);
+    min-width: 20px;
+    text-align: center;
+  }
+  .rank-list .rk-title { font-weight: 600; color: var(--c-text-1); }
+  .rank-list .rk-meta { margin-left: auto; font-size: 12px; color: var(--c-text-3); white-space: nowrap; }
+
+  /* 投稿板块 */
+  .submit-panel {
+    background: linear-gradient(135deg, #f6ece5, #fdfaf8);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-card);
+    padding: 22px 24px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .submit-panel h3 { font-size: 16px; color: var(--c-primary-dark); margin-bottom: 4px; }
+  .submit-panel p { font-size: 13px; color: var(--c-text-2); max-width: 520px; }
+
+  /* 页脚 */
+  .site-footer {
+    background: var(--c-primary-dark);
+    color: #e8d8cf;
+    padding: 36px 0 22px;
+    margin-top: 10px;
+    font-size: 13px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 28px;
+    margin-bottom: 26px;
+  }
+  .footer-brand { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .footer-brand svg { width: 24px; height: 24px; }
+  .footer-desc { font-size: 12.5px; line-height: 1.8; color: #cbb6aa; max-width: 300px; }
+  .footer-col h4 { font-size: 13px; color: #fff; margin-bottom: 10px; font-weight: 700; }
+  .footer-col a { display: block; padding: 3px 0; color: #cbb6aa; font-size: 12.5px; transition: color 0.15s; }
+  .footer-col a:hover { color: #fff; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    color: #b39b8d;
+  }
+
+  /* 回到顶部 */
+  .back-top {
+    position: fixed;
+    right: 20px;
+    bottom: 24px;
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: var(--c-primary);
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: var(--shadow-hover);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 80;
+    transition: background 0.2s, opacity 0.2s;
+  }
+  .back-top:hover { background: var(--c-primary-dark); }
+  .back-top.show { display: flex; }
+
+  /* 搜索与筛选 */
+  .filter-bar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    align-items: center;
+  }
+  .filter-bar input {
+    flex: 1;
+    min-width: 180px;
+    padding: 8px 14px;
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-btn);
+    font-size: 13.5px;
+    font-family: var(--font-sans);
+    background: #fdfaf8;
+    color: var(--c-text-1);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .filter-bar input:focus { border-color: var(--c-primary-light); }
+  .filter-count { font-size: 12.5px; color: var(--c-text-3); white-space: nowrap; }
+  .empty-state {
+    display: none;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 14px;
+    color: var(--c-text-3);
+  }
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width: 1024px) {
+    .layout { grid-template-columns: 1fr 240px; }
+    .side-nav { display: none; }
+    .hero-inner { grid-template-columns: 1fr 260px; gap: 22px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 740px) {
+    .layout { grid-template-columns: 1fr; }
+    .aside-col { position: static; }
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { height: 170px; order: -1; }
+    .main-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--c-surface);
+      flex-direction: column;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--c-line);
+      box-shadow: var(--shadow-hover);
+      gap: 2px;
+      z-index: 95;
+    }
+    .main-nav.open { display: flex; }
+    .header-inner { position: relative; }
+    .hamburger { display: inline-flex; }
+    .header-actions .btn-outline { display: none; }
+    .mobile-nav-overlay.show { display: block; }
+    .section { padding: 18px 16px 20px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+    .news-item { grid-template-columns: 1fr; gap: 2px; }
+    .compact-list li { flex-wrap: wrap; }
+    .compact-list .cl-date { margin-left: 0; }
+    .announce-inner { font-size: 12px; }
+    .card-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  }
+
+  @media (max-width: 400px) {
+    .card-grid { grid-template-columns: 1fr; }
+    .cat-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 + 页头 -->
+<div class="sticky-top">
+  <div class="announce-bar">
+    <div class="container announce-inner">
+      <span class="announce-brand">芃芃坐脸vk</span>
+      <span class="announce-item"><span class="dot"></span>11月7日 · 《沙发角落》第12期上线</span>
+      <span class="announce-item"><span class="dot"></span>本周新增 6 条坐脸互动切片</span>
+      <span class="announce-item"><span class="dot"></span>11月6日 · 直播回放《深夜书桌》已归档</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/#hero" class="logo" aria-label="芃芃坐脸vk 首页">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" stroke="#4f2e22" stroke-width="2.4"/>
+          <path d="M12 22c2-6 6-9 8-9s6 3 8 9" stroke="#d98e5f" stroke-width="2.4" stroke-linecap="round"/>
+          <circle cx="16" cy="17" r="1.8" fill="#4f2e22"/>
+          <circle cx="24" cy="17" r="1.8" fill="#4f2e22"/>
+          <path d="M14 28c2 2 10 2 12 0" stroke="#a9745c" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        芃芃坐脸vk
+      </a>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="打开导航菜单" aria-expanded="false">☰</button>
+
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选视频</a>
+        <a href="/#updates">最新更新</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep-dive">深度解析</a>
+        <a href="/#guide">观看指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#comments">用户评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#ranking">热门榜单</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="/#submit" class="btn btn-outline">投稿</a>
+        <a href="/#featured" class="btn btn-primary">看精选</a>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="mobile-nav-overlay" id="mobileOverlay"></div>
+
+<!-- 首屏 -->
+<section class="hero" id="hero">
+  <div class="container hero-inner">
+    <div>
+      <h1>芃芃坐脸vk</h1>
+      <p class="hero-desc">
+        聚合创作者芃芃的坐脸互动视频、直播切片、幕后花絮与粉丝二创。从《沙发角落》系列到《深夜书桌》直播回放，按类型和更新时间整理，方便快速找到想看的那一期。
+      </p>
+      <div class="hero-actions">
+        <a href="/#featured" class="btn btn-primary">浏览精选视频</a>
+        <a href="/#updates" class="btn btn-outline">查看最新更新</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>48</strong>条坐脸视频</div>
+        <div><strong>12</strong>期沙发角落</div>
+        <div><strong>26</strong>条直播切片</div>
+        <div><strong>11月7日</strong>最近更新</div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 320 200" fill="none">
+        <rect x="20" y="30" width="280" height="140" rx="14" fill="#fdf4ee" stroke="#c9a68f" stroke-width="1.5"/>
+        <rect x="40" y="48" width="120" height="14" rx="4" fill="#e8cbb8"/>
+        <rect x="40" y="70" width="200" height="10" rx="3" fill="#eddcd0"/>
+        <rect x="40" y="88" width="170" height="10" rx="3" fill="#eddcd0"/>
+        <rect x="40" y="106" width="190" height="10" rx="3" fill="#eddcd0"/>
+        <circle cx="250" cy="120" r="26" fill="#d98e5f" opacity="0.35"/>
+        <circle cx="250" cy="120" r="16" fill="#a9745c" opacity="0.5"/>
+        <path d="M244 120l4 4 8-9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="40" y="132" width="60" height="22" rx="6" fill="#7b4b3a"/>
+        <rect x="110" y="132" width="60" height="22" rx="6" fill="#f6ece5" stroke="#b9937e" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 主布局 -->
+<div class="container layout">
+
+  <!-- 左频道索引 -->
+  <aside class="side-nav" aria-label="频道索引">
+    <h3>频道</h3>
+    <a href="/#overview" class="active">领域概览</a>
+    <a href="/#featured">精选视频</a>
+    <a href="/#updates">最新更新</a>
+    <a href="/#categories">分类入口</a>
+    <a href="/#deep-dive">深度解析</a>
+    <a href="/#guide">观看指南</a>
+    <a href="/#faq">常见问答</a>
+    <a href="/#comments">用户评论</a>
+    <a href="/#news">相关资讯</a>
+    <a href="/#ranking">热门榜单</a>
+    <a href="/#submit">参与投稿</a>
+  </aside>
+
+  <!-- 中主内容 -->
+  <main class="main-col">
+
+    <!-- 1. 领域概览 -->
+    <section class="section" id="overview">
+      <div class="section-head">
+        <h2>坐脸互动视频的内容版图</h2>
+        <span class="section-sub">2026 年秋季整理</span>
+      </div>
+      <div class="lead-text">
+        <p>坐脸视频属于互动生活向内容的一个分支，核心画面是人物面部与沙发、床沿、椅背等软质家具的近距离接触，通常伴随即兴对话、环境音和手持镜头晃动。芃芃的坐脸系列从 2025 年冬季开始固定更新，目前形成三条主要线：周更的《沙发角落》、不定期直播回放《深夜书桌》，以及粉丝剪的《三分钟切片》二创合集。</p>
+        <p>《沙发角落》偏向布景化拍摄，每期会更换靠垫组合和背景挂布，镜头多固定在俯拍机位，第 9 期之后加入侧机位切换。直播回放则不修音、不剪停顿，保留了大量闲聊和准备动作，时长普遍在 40 到 70 分钟之间。二创切片由不同账号剪辑，节奏更快，但画质和字幕质量参差。</p>
+        <p>从观众反馈看，讨论集中在三件事上：第 12 期的靠垫配色、直播里提到的下一期拍摄地，以及二创账号「小橘剪片」的授权争议。这些话题分别落在作品本身、更新计划和创作者权益三个层面，后续板块会分开处理。</p>
+      </div>
+    </section>
+
+    <!-- 2. 精选内容推荐 -->
+    <section class="section" id="featured">
+      <div class="section-head">
+        <h2>精选坐脸视频与直播切片</h2>
+        <span class="section-sub">按更新时间和讨论度筛选</span>
+      </div>
+
+      <div class="filter-bar">
+        <input type="search" id="featuredSearch" placeholder="搜索条目名称或标签，如：沙发角落、深夜书桌" aria-label="搜索精选视频">
+        <span class="filter-count" id="featuredCount">共 8 条</span>
+      </div>
+
+      <div class="card-grid" id="featuredGrid">
+        <article class="card" data-tags="沙发角落 靠垫 布景">
+          <img class="card-img" src="https://picsum.photos/seed/pengpeng-sofa12/400/300" width="400" height="300" loading="lazy" alt="沙发角落第12期靠垫布景画面">
+          <div class="card-body">
+            <h3 class="card-title">《沙发角落》第12期：灰绿靠垫与侧机位</h3>
+            <div class="tag-row"><span class="tag accent">坐脸正片</span><span class="tag">布景</span><span class="tag">侧机位</span></div>
+            <p class="card-desc">本期把主沙发换成灰绿色亚麻套，俯拍机位保留，新增右侧 45 度侧机位，第 8 分钟起有连续 40 秒面部贴靠靠垫的长镜头。靠垫填充物偏软，压痕明显。</p>
+            <div class="card-meta"><span>11月7日</span><span>时长 18:24</span><span>讨论 312</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="深夜书桌 直播回放 书桌">
+          <img class="card-img" src="https://picsum.photos/seed/pengpeng-desk/400/300" width="400" height="300" loading="lazy" alt="深夜书桌直播回放画面中的书桌与台灯">
+          <div class="card-body">
+            <h3 class="card-title">《深夜书桌》11月6日直播回放</h3>
+            <div class="tag-row"><span class="tag accent">直播回放</span><span class="tag">书桌</span><span class="tag">未剪辑</span></div>
+            <p class="card-desc">书桌场景的坐脸内容，台灯光从左侧打过来，中间有 12 分钟调试麦克风的过程未剪掉。后段聊到第 13 期想换到飘窗拍摄，但没有确认具体日期。</p>
+            <div class="card-meta"><span>11月6日</span><span>时长 52:10</span><span>回放 1.2 万</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="三分钟切片 二创 混剪">
+          <img class="card-img" src="https://picsum.photos/seed/pengpeng-cut03/400/300" width="400" height="300" loading="lazy" alt="三分钟切片二创视频的画面截帧">
+          <div class="card-body">
+            <h3 class="card-title">三分钟切片：第9到11期靠垫变化混剪</h3>
+            <div class="tag-row"><span class="tag accent">二创</span><span class="tag">混剪</span><span class="tag">靠垫对比</span></div>
+            <p class="card-desc">UP 主「小橘剪片」把第 9 到 11 期的靠垫特写按时间顺序拼接，标出了三种填充物的回弹差异。第 10 期的旧靠垫在第 11 期换掉了，画面里有明显对照。</p>
+            <div class="card-meta"><span>11月5日</span><span>时长 03:12</span><span>播放 2.8 万</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="布景 幕后 拍摄">
+          <img class="card-img" src="https://picsum.photos/seed/pengpeng-bts/400/300" width="400" height="300" loading="lazy" alt="沙发角落拍摄现场的幕后花絮">
+          <div class="card-body">
+            <h3 class="card-title">幕后：第12期靠垫套换装记录</h3>
+            <div class="tag-row"><span class="tag accent">幕后花絮</span><span class="tag">布景</span><span class="tag">拍摄</span></div>
+            <p class="card-desc">4 分钟竖屏记录，从拆旧套到套新套全程。灰绿套第一次装上去时拉链卡住，重装了两次。视频里能听到芃芃和助理讨论靠垫硬度的对话。</p>
+            <div class="card-meta"><span>11月7日</span><span>时长 04:06</span><span>点赞 890</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="沙发角落 第11期 旧靠垫">
+          <img class="card-img" src="https://picsum.photos/seed/pengpeng-sofa11/400/300" width="400" height="300" loading="lazy" alt="沙发角落第11期旧靠垫时期的画面">
+          <div class="card-body">
+            <h3 class="card-title">《沙发角落》第11期：旧靠垫最后一期</h3>
+            <div class="tag-row"><span class="tag accent">坐脸正片</span><span class="tag">旧靠垫</span><span class="tag">俯拍</span></div>
+            <p class="card-desc">第 12 期换靠垫之前的最后一期，全程俯拍，主靠垫是米白色羽丝绒，压下去回弹慢。第 6 分钟有一段连续贴靠，镜头没有切走。</p>
+            <div class="card-meta"><span>10月31日</span><span>时长 16:50</span><span>讨论 205</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="深夜书桌 飘窗 预告">
+          <img class="card-img" src="https://picsum.photos/seed/pengpeng-window/400/300" width="400" height="300" loading="lazy" alt="飘窗场景的拍摄测试照片">
+          <div class="card-body">
+            <h3 class="card-title">飘窗拍摄测试：第13期场景实验</h3>
+            <div class="tag-row"><span class="tag accent">预告</span><span class="tag">飘窗</span><span class="tag">场景测试</span></div>
+            <p class="card-desc">直播回放里切出来的一段测试画面，飘窗台面铺了薄垫，光线偏冷。芃芃说坐上去膝盖会顶到窗框，位置还没调好，第 13 期是否用飘窗待定。</p>
+            <div class="card-meta"><span>11月6日</span><span>时长 06:42</span><span>回看 4300</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="二创 字幕 画质">
+          <img class="card-img" src="https://picsum.photos/seed/pengpeng-sub/400/300" width="400" height="300" loading="lazy" alt="二创切片字幕样式截图">
+          <div class="card-body">
+            <h3 class="card-title">二创切片字幕版：第12期高能片段</h3>
+            <div class="tag-row"><span class="tag accent">二创</span><span class="tag">字幕</span><span class="tag">切片</span></div>
+            <p class="card-desc">把第 12 期侧机位那段剪成 2 分 40 秒，加了中英双语字幕。字幕字号偏大，部分画面被挡住，评论区有人提了这点，UP 主回复说下版调小。</p>
+            <div class="card-meta"><span>11月7日</span><span>时长 02:40</span><span>播放 1.1 万</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="沙发角落 靠垫 材质">
+          <img class="card-img" src="https://picsum.photos/seed/pengpeng-cushion/400/300" width="400" height="300" loading="lazy" alt="三种靠垫材质的对比特写">
+          <div class="card-body">
+            <h3 class="card-title">靠垫材质对比：羽丝绒、记忆棉与乳胶</h3>
+            <div class="tag-row"><span class="tag accent">对比</span><span class="tag">靠垫</span><span class="tag">材质</span></div>
+            <p class="card-desc">把第 9 到 12 期出现过的三种靠垫做按压回弹测试，记忆棉回弹最慢，乳胶最快。测试用同一只手同一力度，时间点打在画面左上角。</p>
+            <div class="card-meta"><span>11月4日</span><span>时长 05:18</span><span>收藏 1200</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="empty-state" id="featuredEmpty">没有匹配的条目，换个关键词试试。</div>
+    </section>
+
+    <!-- 3. 最新更新 -->
+    <section class="section" id="updates">
+      <div class="section-head">
+        <h2>最新更新与直播动态</h2>
+        <span class="section-sub">11月1日 — 11月8日</span>
+      </div>
+      <ul class="compact-list">
+        <li><span class="cl-title">《沙发角落》第12期正片上线</span><span class="cl-desc">灰绿靠垫首次出镜，新增侧机位</span><span class="cl-date">11月7日</span></li>
+        <li><span class="cl-title">幕后花絮：靠垫套换装记录</span><span class="cl-desc">4 分钟竖屏，拉链卡住重装两次</span><span class="cl-date">11月7日</span></li>
+        <li><span class="cl-title">二创字幕版第12期片段</span><span class="cl-desc">双语字幕，UP 主回应字号问题</span><span class="cl-date">11月7日</span></li>
+        <li><span class="cl-title">《深夜书桌》11月6日直播回放归档</span><span class="cl-desc">52 分钟未剪辑，含飘窗测试</span><span class="cl-date">11月6日</span></li>
+        <li><span class="cl-title">飘窗拍摄测试片段单独放出</span><span class="cl-desc">膝盖顶窗框问题未解决</span><span class="cl-date">11月6日</span></li>
+        <li><span class="cl-title">三分钟切片第9到11期混剪</span><span class="cl-desc">靠垫回弹差异对照</span><span class="cl-date">11月5日</span></li>
+        <li><span class="cl-title">靠垫材质对比视频</span><span class="cl-desc">羽丝绒、记忆棉、乳胶三种</span><span class="cl-date">11月4日</span></li>
+        <li><span class="cl-title">「小橘剪片」授权说明更新</span><span class="cl-desc">新增二创使用范围条款</span><span class="cl-date">11月3日</span></li>
+        <li><span class="cl-title">第12期预告图发布</span><span class="cl-desc">灰绿靠垫一角，未露全貌</span><span class="cl-date">11月1日</span></li>
+        <li><span class="cl-title">《沙发角落》第11期播放破 8 万</span><span class="cl-desc">旧靠垫时期最高播放</span><span class="cl-date">10月31日</span></li>
+      </ul>
+    </section>
+
+    <!-- 4. 分类入口 -->
+    <section class="section" id="categories">
+      <div class="section-head">
+        <h2>按类型浏览</h2>
+        <span class="section-sub">8 个分类入口</span>
+      </div>
+      <div class="cat-grid">
+        <a href="/#featured" class="cat-item"><strong>沙发角落正片</strong><span>周更 · 12 期</span></a>
+        <a href="/#featured" class="cat-item"><strong>深夜书桌回放</strong><span>直播 · 7 场</span></a>
+        <a href="/#featured" class="cat-item"><strong>三分钟切片</strong><span>二创 · 26 条</span></a>
+        <a href="/#featured" class="cat-item"><strong>幕后花絮</strong><span>拍摄记录 · 9 条</span></a>
+        <a href="/#featured" class="cat-item"><strong>靠垫材质对比</strong><span>测试 · 4 条</span></a>
+        <a href="/#featured" class="cat-item"><strong>布景与机位</strong><span>布景解析 · 6 条</span></a>
+        <a href="/#comments" class="cat-item"><strong>粉丝讨论</strong><span>评论精选</span></a>
+        <a href="/#submit" class="cat-item"><strong>投稿与互动</strong><span>征集二创</span></a>
+      </div>
+    </section>
+
+    <!-- 5. 深度解析 -->
+    <section class="section" id="deep-dive">
+      <div class="section-head">
+        <h2>坐脸视频的观看门槛与内容分层</h2>
+        <span class="section-sub">深度解析</span>
+      </div>
+      <article class="deep-article">
+        <p>坐脸视频看起来门槛极低——一张沙发、一个固定机位就能拍。但把芃芃的 48 条内容按类型拆开，会发现真正决定观看体验的不是画面强度，而是布景一致性、声音处理和场景切换节奏这三项。下面按三个具体问题展开。</p>
+
+        <h3>一、靠垫更换怎样影响连续观看</h3>
+        <p>第 9 到 11 期用的是米白色羽丝绒靠垫，第 12 期换成灰绿色亚麻套。单看一期，换靠垫只是视觉新鲜感；连续看四期，填充物差异会直接影响注意力。羽丝绒回弹慢，面部贴靠后压痕停留时间长，画面里能看到凹陷恢复的过程；亚麻套回弹快，压痕几乎在 2 秒内消失。</p>
+        <p>可核对的时间线：第 10 期第 4 分 12 秒，靠垫压下去后 6 秒才回弹到接近原状；第 12 期第 8 分 05 秒，同样力度的贴靠，压痕在 2 秒左右恢复。这个差异在「靠垫材质对比」视频里有逐帧标注。对连续观看的人来说，回弹慢的靠垫让画面多了一层可预期的节奏，回弹快则更干脆，但连续性弱一些。</p>
+        <ul>
+          <li>羽丝绒：回弹 5—7 秒，压痕明显，适合长镜头</li>
+          <li>记忆棉：回弹 8—10 秒，压痕最深，第 9 期短暂用过</li>
+          <li>乳胶：回弹 1—2 秒，压痕浅，第 12 期亚麻套内芯</li>
+        </ul>
+
+        <h3>二、直播回放与精剪正片的内容差</h3>
+        <p>《深夜书桌》回放平均 52 分钟，正片平均 17 分钟。多出来的 35 分钟里，大约 12 分钟是设备调试，9 分钟是闲聊，剩下的是场景切换和等待。这 12 分钟调试不是废料：11 月 6 日那场，麦克风换了三个位置，第一个位置有电流声，第二个位置收进了窗外车流，第三个才定下来。正片里这段被完全剪掉，观众听不到环境音的变化。</p>
+        <p>两种形态各有用途。想快速看坐脸画面，精剪正片效率高；想了解拍摄条件和现场状况，回放里的调试段落信息更密。判断一场回放值不值得看，可以看标题有没有标「含场景测试」——11 月 6 日这场标了，实际也确实有飘窗测试的 6 分钟。</p>
+
+        <h3>三、二创切片的可信度怎么拆</h3>
+        <p>二创切片的画质和字幕质量差异很大，判断可信度可以拆成三项来源痕迹：原片时间码是否保留、剪辑账号是否标注授权状态、字幕是否区分了原声和后期配音。</p>
+        <ul>
+          <li>时间码：保留原片时间码的切片，能回原片核对，可信度高一档。「小橘剪片」的混剪保留了时间码，字幕版没有。</li>
+          <li>授权标注：11 月 3 日「小橘剪片」更新了授权说明，写明二创使用范围。其他三个剪辑账号没有更新说明。</li>
+          <li>原声区分：字幕版切片在第 1 分 20 秒处有一段后期配音，字幕里用括号标了「后期」，但字体和原声字幕一样，容易看漏。</li>
+        </ul>
+        <p>三项里缺两项，基本只能当预告看，不能当原片替代。缺一项的，可以看，但要回到原片核对关键片段。这是目前二创内容最实际的分层方法。</p>
+      </article>
+    </section>
+
+    <!-- 6. 观看指南 -->
+    <section class="section" id="guide">
+      <div class="section-head">
+        <h2>坐脸内容的观看顺序与判断依据</h2>
+        <span class="section-sub">体验指南</span>
+      </div>
+      <div class="lead-text">
+        <p><strong>先看哪一期。</strong>没看过这个系列的话，从第 11 期开始比第 12 期合适。第 11 期是旧靠垫最后一期，机位固定、没有侧切，节奏最稳，能看清整个布景逻辑。第 12 期加了侧机位和灰绿靠垫，信息更多，但第一次看容易分不清主次。</p>
+        <p><strong>怎么判断一期值不值得投入时间。</strong>看三个点：靠垫有没有换、机位有没有动、时长有没有超过 20 分钟。三项都变的是大改版，值得完整看；只换靠垫的是常规更新，可以跳着看；只动一个机位的，看前 5 分钟就能判断整期风格。</p>
+        <p><strong>同类条目怎么比较。</strong>《沙发角落》和《深夜书桌》不建议按集数对比，因为拍摄条件不同。前者是布景拍摄，后者是直播切片。比较时应该看同一期内的两个版本：正片和回放，选一个看完，另一个只看差异段落。</p>
+        <p><strong>二创切片的使用场景。</strong>想快速了解第 12 期发生了什么，看「三分钟切片」；想核对具体时间点，回到正片。字幕版切片适合听不清原声的观众，但注意后期配音段落。</p>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head">
+        <h2>关于坐脸视频的常见问题</h2>
+        <span class="section-sub">6 个问答</span>
+      </div>
+
+      <details class="faq-item">
+        <summary>《沙发角落》第12期的灰绿靠垫是什么材质？</summary>
+        <div class="faq-answer">外套是亚麻混纺，内芯是乳胶。11 月 7 日的幕后花絮里能看到内芯标签，乳胶含量标注 92%。回弹测试视频里对比过，乳胶回弹比羽丝绒快 4 到 5 秒。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>深夜书桌直播回放为什么有 12 分钟调试没剪掉？</summary>
+        <div class="faq-answer">回放保留原始直播时间轴，调试段落在第 6 到 18 分钟。11 月 6 日那场调试麦克风换了三个位置，第一个位置有电流声，第二个收进车流声，第三个才定稿。正片会把这段剪掉，回放留着是为了让观众看到拍摄条件。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>小橘剪片的二创切片拿到授权了吗？</summary>
+        <div class="faq-answer">11 月 3 日更新了授权说明，写明二创使用范围包括混剪和字幕版，但要求保留原片时间码。字幕版切片没有保留时间码，严格说超出了授权说明的范围，这一点在评论区有讨论。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>第13期会用飘窗拍摄吗？</summary>
+        <div class="faq-answer">11 月 6 日直播里做了飘窗测试，台面铺了薄垫，但膝盖会顶到窗框，位置没调好。芃芃当时说「还不确定」，没有给出具体日期。第 13 期是否用飘窗，目前没有确认信息。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>羽丝绒和记忆棉靠垫在画面里差别大吗？</summary>
+        <div class="faq-answer">差别在压痕停留时间。羽丝绒回弹 5 到 7 秒，记忆棉 8 到 10 秒。第 9 期短暂用过记忆棉，第 3 分 40 秒有一段贴靠，压痕停了 9 秒才恢复，比第 10 期的羽丝绒慢将近一倍。连续看的话能看出来。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>三分钟切片和正片的时间码对得上吗？</summary>
+        <div class="faq-answer">「小橘剪片」的混剪保留了原片时间码，截图里能看到左上角的小字。字幕版切片没有保留时间码，只能靠画面内容回原片找。核对时建议用混剪版定位，再用正片确认。</div>
+      </details>
+    </section>
+
+    <!-- 8. 用户评论 -->
+    <section class="section" id="comments">
+      <div class="section-head">
+        <h2>观众在说什么</h2>
+        <span class="section-sub">16 条评论</span>
+      </div>
+      <ul class="comment-list">
+        <li class="comment"><span class="c-user">阿飘不飘</span><span class="c-text">第12期侧机位那段是真的稳，40秒没切镜头，灰绿靠垫压痕看得清清楚楚。</span><span class="c-time">11月7日</span></li>
+        <li class="comment"><span class="c-user">沙发缝里的硬币</span><span class="c-text">旧靠垫换掉有点可惜，羽丝绒那种慢回弹的感觉没了。</span><span class="c-time">11月7日</span></li>
+        <li class="comment"><span class="c-user">小橘剪片本人</span><span class="c-text">字幕版字号确实大了，下版会调小，时间码也会加上。</span><span class="c-time">11月7日</span></li>
+        <li class="comment"><span class="c-user">夜猫子小张</span><span class="c-text">深夜书桌52分钟我全看完了，调试那段其实挺有意思的，能听到窗外车流。</span><span class="c-time">11月6日</span></li>
+        <li class="comment"><span class="c-user">不吃香菜</span><span class="c-text">飘窗那个测试画面膝盖顶窗框确实明显，坐上去姿势很别扭。</span><span class="c-time">11月6日</span></li>
+        <li class="comment"><span class="c-user">Lemon_茶</span><span class="c-text">靠垫材质对比视频做得很细，三种回弹时间都标了帧。</span><span class="c-time">11月5日</span></li>
+        <li class="comment"><span class="c-user">大橘为重</span><span class="c-text">说真的我比较关心第13期到底拍不拍飘窗，等了一周没消息。</span><span class="c-time">11月6日</span></li>
+        <li class="comment"><span class="c-user">键盘上的猫</span><span class="c-text">第11期播放破8万了？旧靠垫最后一期确实好看，机位稳。</span><span class="c-time">11月4日</span></li>
+        <li class="comment"><span class="c-user">半糖去冰</span><span class="c-text">二创字幕版后期配音那段我也看漏了，以为全是原声。</span><span class="c-time">11月7日</span></li>
+        <li class="comment"><span class="c-user">沙发角落常驻</span><span class="c-text">灰绿亚麻套比米白的好看，但乳胶回弹太快，压痕一下就没了，少点意思。</span><span class="c-time">11月7日</span></li>
+        <li class="comment"><span class="c-user">路过打个卡</span><span class="c-text">这系列更新频率还行，周更能保持住就不错。</span><span class="c-time">11月3日</span></li>
+        <li class="comment"><span class="c-user">一只咸鱼</span><span class="c-text">记忆棉那期我都没注意到，回头补一下第9期。</span><span class="c-time">11月2日</span></li>
+        <li class="comment"><span class="c-user">窗台绿萝</span><span class="c-text">小橘剪片授权说明更新了，其他几个剪辑号还是没动静。</span><span class="c-time">11月3日</span></li>
+        <li class="comment"><span class="c-user">熬夜冠军</span><span class="c-text">深夜书桌的台灯光比沙发角落的顶光舒服，希望多拍书桌。</span><span class="c-time">11月6日</span></li>
+        <li class="comment"><span class="c-user">momo</span><span class="c-text">今天下雨，窝在沙发上看第12期，刚好。</span><span class="c-time">11月8日</span></li>
+        <li class="comment"><span class="c-user">橘子汽水</span><span class="c-text">靠垫套拉链卡住重装两次那个花絮笑死，很真实。</span><span class="c-time">11月7日</span></li>
+      </ul>
+    </section>
+
+    <!-- 9. 相关资讯 -->
+    <section class="section" id="news">
+      <div class="section-head">
+        <h2>相关资讯</h2>
+        <span class="section-sub">近一周动态</span>
+      </div>
+      <div class="news-item">
+        <div class="news-date">11月7日</div>
+        <div>
+          <div class="news-title">《沙发角落》第12期上线首日讨论量 312 条</div>
+          <div class="news-summary">灰绿靠垫和侧机位成为主要讨论点，其中 71 条评论提到亚麻套质感。相比第 11 期首日讨论量 205 条，增长约 52%。</div>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">11月6日</div>
+        <div>
+          <div class="news-title">深夜书桌直播回放归档，飘窗测试片段单独放出</div>
+          <div class="news-summary">52 分钟回放中，第 38 分钟起有 6 分钟飘窗测试画面。芃芃在直播里说膝盖顶窗框的问题「还没想好怎么解决」，第 13 期拍摄地未定。</div>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">11月5日</div>
+        <div>
+          <div class="news-title">三分钟切片混剪播放 2.8 万，靠垫对比成亮点</div>
+          <div class="news-summary">「小橘剪片」把第 9 到 11 期靠垫特写按时间拼接，标注三种填充物回弹时间。评论区有 43 条讨论记忆棉期次，部分观众回头补看第 9 期。</div>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">11月4日</div>
+        <div>
+          <div class="news-title">靠垫材质对比视频发布，乳胶回弹 1 到 2 秒</div>
+          <div class="news-summary">同一只手同一力度测试三种材质，记忆棉回弹 8 到 10 秒，羽丝绒 5 到 7 秒，乳胶 1 到 2 秒。视频左上角标注测试时间点，可逐帧核对。</div>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">11月3日</div>
+        <div>
+          <div class="news-title">小橘剪片更新二创授权说明，新增时间码要求</div>
+          <div class="news-summary">说明写明二创使用范围包括混剪和字幕版，要求保留原片时间码。目前四个剪辑账号中，只有小橘剪片更新了说明，其余三个未跟进。</div>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">11月1日</div>
+        <div>
+          <div class="news-title">第12期预告图发布，灰绿靠垫一角出镜</div>
+          <div class="news-summary">预告图只露出靠垫左下角，未显示全貌。评论区有人根据色卡推测是亚麻材质，11 月 7 日正片上线后确认猜测正确。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. 相关推荐 -->
+    <section class="section" id="related">
+      <div class="section-head">
+        <h2>相关推荐方向</h2>
+        <span class="section-sub">具体条目与标签</span>
+      </div>
+      <div class="tag-index">
+        <a href="/#featured">沙发角落第12期</a>
+        <a href="/#featured">深夜书桌11月6日回放</a>
+        <a href="/#featured">靠垫回弹测试</a>
+        <a href="/#featured">飘窗拍摄测试</a>
+        <a href="/#featured">三分钟切片混剪</a>
+        <a href="/#featured">亚麻靠垫套换装</a>
+        <a href="/#featured">侧机位45度</a>
+        <a href="/#featured">羽丝绒慢回弹</a>
+      </div>
+    </section>
+
+    <!-- 11. 热门榜单 -->
+    <section class="section" id="ranking">
+      <div class="section-head">
+        <h2>本周热门条目榜</h2>
+        <span class="section-sub">按播放与讨论综合排序</span>
+      </div>
+      <ol class="rank-list">
+        <li><span class="rk-title">《沙发角落》第12期</span><span class="rk-meta">播放 3.4 万 · 讨论 312</span></li>
+        <li><span class="rk-title">三分钟切片：第9到11期混剪</span><span class="rk-meta">播放 2.8 万 · 收藏 1900</span></li>
+        <li><span class="rk-title">《深夜书桌》11月6日回放</span><span class="rk-meta">回看 1.2 万 · 弹幕 860</span></li>
+        <li><span class="rk-title">二创字幕版第12期片段</span><span class="rk-meta">播放 1.1 万 · 评论 96</span></li>
+        <li><span class="rk-title">靠垫材质对比视频</span><span class="rk-meta">播放 9800 · 收藏 1200</span></li>
+        <li><span class="rk-title">幕后：靠垫套换装记录</span><span class="rk-meta">播放 7600 · 点赞 890</span></li>
+      </ol>
+    </section>
+
+    <!-- 12. 投稿板块 -->
+    <section class="section" id="submit">
+      <div class="submit-panel">
+        <div>
+          <h3>投稿坐脸二创或场景建议</h3>
+          <p>接受三类内容：已剪辑完成的二创切片、靠垫或布景对比测试、第 13 期场景建议（含飘窗方案）。投稿请附原片时间码或测试条件说明，方便核对。</p>
+        </div>
+        <a href="/#featured" class="btn btn-primary">查看投稿须知</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右辅助栏 -->
+  <aside class="aside-col" aria-label="辅助信息">
+    <div class="panel">
+      <h3>本周热榜</h3>
+      <ul class="hot-list">
+        <li><span class="rank">1</span>沙发角落第12期<span class="meta">3.4万</span></li>
+        <li><span class="rank">2</span>三分钟切片混剪<span class="meta">2.8万</span></li>
+        <li><span class="rank">3</span>深夜书桌回放<span class="meta">1.2万</span></li>
+        <li><span class="rank">4</span>字幕版第12期<span class="meta">1.1万</span></li>
+        <li><span class="rank">5</span>靠垫材质对比<span class="meta">9800</span></li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h3>更新流水</h3>
+      <ul class="update-feed">
+        <li>第12期正片上线<span class="u-time">11月7日</span></li>
+        <li>靠垫换装花絮<span class="u-time">11月7日</span></li>
+        <li>深夜书桌回放归档<span class="u-time">11月6日</span></li>
+        <li>飘窗测试片段放出<span class="u-time">11月6日</span></li>
+        <li>靠垫材质对比<span class="u-time">11月4日</span></li>
+        <li>授权说明更新<span class="u-time">11月3日</span></li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h3>条目速览</h3>
+      <ul class="compact-list" style="font-size:13px;">
+        <li style="display:block;border:none;padding:4px 0;"><span class="cl-title">沙发角落正片</span> <span class="cl-desc">12 期</span></li>
+        <li style="display:block;border:none;padding:4px 0;"><span class="cl-title">深夜书桌回放</span> <span class="cl-desc">7 场</span></li>
+        <li style="display:block;border:none;padding:4px 0;"><span class="cl-title">二创切片</span> <span class="cl-desc">26 条</span></li>
+        <li style="display:block;border:none;padding:4px 0;"><span class="cl-title">幕后花絮</span> <span class="cl-desc">9 条</span></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<!-- 页脚 -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" stroke="#fff" stroke-width="2.4"/>
+            <path d="M12 22c2-6 6-9 8-9s6 3 8 9" stroke="#d98e5f" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="16" cy="17" r="1.8" fill="#fff"/>
+            <circle cx="24" cy="17" r="1.8" fill="#fff"/>
+          </svg>
+          芃芃坐脸vk
+        </div>
+        <p class="footer-desc">覆盖 2025 年 12 月至 2026 年 11 月的坐脸内容，包含正片、直播回放、幕后花絮、二创切片和靠垫材质测试。周更正片，直播回放不定期更新。</p>
+      </div>
+      <div class="footer-col">
+        <h4>内容频道</h4>
+        <a href="/#featured">沙发角落正片</a>
+        <a href="/#featured">深夜书桌回放</a>
+        <a href="/#featured">三分钟切片</a>
+        <a href="/#featured">幕后花絮</a>
+      </div>
+      <div class="footer-col">
+        <h4>浏览入口</h4>
+        <a href="/#overview">领域概览</a>
+        <a href="/#updates">最新更新</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#ranking">热门榜单</a>
+      </div>
+      <div class="footer-col">
+        <h4>参与</h4>
+        <a href="/#submit">投稿二创</a>
+        <a href="/#comments">粉丝讨论</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#guide">观看指南</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>页面内容为示例条目，条目名称与数据用于展示聚合结构。最近更新：2026年11月8日，对应公告条第12期上线信息。</span>
+      <span>© 2026 芃芃坐脸vk 内容聚合</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+<script>
+  // 移动端菜单
+  const hamburger = document.getElementById('hamburgerBtn');
+  const mainNav = document.getElementById('mainNav');
+  const overlay = document.getElementById('mobileOverlay');
+
+  function closeMenu() {
+    mainNav.classList.remove('open');
+    overlay.classList.remove('show');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    overlay.classList.toggle('show', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  overlay.addEventListener('click', closeMenu);
+
+  mainNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  // 回到顶部
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', () => {
+    backTop.classList.toggle('show', window.scrollY > window.innerHeight * 0.8);
+  });
+  backTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // 精选搜索筛选
+  const searchInput = document.getElementById('featuredSearch');
+  const featuredGrid = document.getElementById('featuredGrid');
+  const featuredCount = document.getElementById('featuredCount');
+  const featuredEmpty = document.getElementById('featuredEmpty');
+  const cards = Array.from(featuredGrid.querySelectorAll('.card'));
+
+  function filterCards() {
+    const q = searchInput.value.trim().toLowerCase();
+    let visible = 0;
+    cards.forEach(card => {
+      const title = card.querySelector('.card-title').textContent.toLowerCase();
+      const tags = (card.dataset.tags || '').toLowerCase();
+      const desc = card.querySelector('.card-desc').textContent.toLowerCase();
+      const match = !q || title.includes(q) || tags.includes(q) || desc.includes(q);
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    featuredCount.textContent = '共 ' + visible + ' 条';
+    featuredEmpty.style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  searchInput.addEventListener('input', filterCards);
+
+  // 侧栏导航高亮
+  const sections = document.querySelectorAll('main .section[id]');
+  const sideLinks = document.querySelectorAll('.side-nav a');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        sideLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '/#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-100px 0px -60% 0px', threshold: 0.1 });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+<!-- 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "芃芃坐脸vk",
+  "description": "芃芃坐脸vk 内容聚合页，汇集创作者芃芃的坐脸视频、直播回放、幕后花絮与粉丝二创。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "《沙发角落》第12期的灰绿靠垫是什么材质？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "外套是亚麻混纺，内芯是乳胶。11月7日的幕后花絮里能看到内芯标签，乳胶含量标注92%。回弹测试视频里对比过，乳胶回弹比羽丝绒快4到5秒。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "深夜书桌直播回放为什么有12分钟调试没剪掉？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "回放保留原始直播时间轴，调试段落在第6到18分钟。11月6日那场调试麦克风换了三个位置，第一个位置有电流声，第二个收进车流声，第三个才定稿。正片会把这段剪掉，回放留着是为了让观众看到拍摄条件。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "小橘剪片的二创切片拿到授权了吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "11月3日更新了授权说明，写明二创使用范围包括混剪和字幕版，但要求保留原片时间码。字幕版切片没有保留时间码，严格说超出了授权说明的范围，这一点在评论区有讨论。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "第13期会用飘窗拍摄吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "11月6日直播里做了飘窗测试，台面铺了薄垫，但膝盖会顶到窗框，位置没调好。芃芃当时说「还不确定」，没有给出具体日期。第13期是否用飘窗，目前没有确认信息。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "羽丝绒和记忆棉靠垫在画面里差别大吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "差别在压痕停留时间。羽丝绒回弹5到7秒，记忆棉8到10秒。第9期短暂用过记忆棉，第3分40秒有一段贴靠，压痕停了9秒才恢复，比第10期的羽丝绒慢将近一倍。连续看的话能看出来。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "三分钟切片和正片的时间码对得上吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "「小橘剪片」的混剪保留了原片时间码，截图里能看到左上角的小字。字幕版切片没有保留时间码，只能靠画面内容回原片找。核对时建议用混剪版定位，再用正片确认。"
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+              </html>
