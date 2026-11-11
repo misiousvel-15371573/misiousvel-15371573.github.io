@@ -1,0 +1,1831 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025樱空桃作品番号 - 索引与动态</title>
+  <meta name="description" content="2025樱空桃作品番号索引，收录樱空桃2025年发行的具体番号、共演者与发行日期，提供作品看点、用户评论与相关动态，适合关注其年度新作的观众查阅。">
+  <meta name="keywords" content="2025樱空桃作品番号">
+  <style>
+    :root {
+      --primary: #8b5e7a;
+      --primary-light: #c98eae;
+      --primary-dark: #5e3a50;
+      --bg: #faf7f9;
+      --panel: #ffffff;
+      --text-primary: #2e1f2a;
+      --text-secondary: #6b4e62;
+      --text-tertiary: #9e8292;
+      --border: #e8dce2;
+      --radius-card: 16px;
+      --radius-btn: 30px;
+      --radius-tag: 20px;
+      --shadow-default: 0 4px 12px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      --announce-h: 44px;
+      --header-h: 64px;
+      --sticky-offset: calc(var(--announce-h) + var(--header-h));
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--sticky-offset);
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 吸顶公告条 */
+    .announce-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--primary-dark);
+      color: #fff;
+      height: var(--announce-h);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+      padding: 0 24px;
+    }
+
+    .announce-inner {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      overflow-x: auto;
+      scrollbar-width: none;
+      white-space: nowrap;
+    }
+
+    .announce-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .announce-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .announce-item .date {
+      font-weight: 600;
+      color: var(--primary-light);
+    }
+
+    .announce-item .name {
+      font-weight: 500;
+    }
+
+    .announce-brand {
+      font-weight: 700;
+      margin-right: 8px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    /* 吸顶页头 */
+    .header {
+      position: sticky;
+      top: var(--announce-h);
+      z-index: 99;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+    }
+
+    .header-container {
+      max-width: 1360px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-svg {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--primary-dark);
+      letter-spacing: -0.3px;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 24px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .main-nav a {
+      transition: color 0.2s;
+    }
+
+    .main-nav a:hover {
+      color: var(--primary);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: #f3edf1;
+      border-radius: var(--radius-btn);
+      padding: 6px 16px;
+      gap: 8px;
+      border: 1px solid transparent;
+      transition: border 0.2s;
+    }
+
+    .search-box:focus-within {
+      border-color: var(--primary-light);
+    }
+
+    .search-box input {
+      border: none;
+      background: transparent;
+      font-size: 0.9rem;
+      width: 160px;
+      outline: none;
+      color: var(--text-primary);
+    }
+
+    .search-box input::placeholder {
+      color: var(--text-tertiary);
+    }
+
+    .search-box svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--text-tertiary);
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 6px 10px;
+      cursor: pointer;
+      color: var(--text-primary);
+    }
+
+    .hamburger svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    /* 布局主容器 */
+    .layout {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 32px 24px 60px;
+      display: grid;
+      grid-template-columns: 220px 1fr 280px;
+      gap: 32px;
+      align-items: start;
+    }
+
+    /* 左侧频道栏 */
+    .sidebar-left {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 16px);
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 20px 16px;
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--border);
+    }
+
+    .sidebar-left h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .channel-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .channel-list a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .channel-list a:hover,
+    .channel-list a.active {
+      background: #f3edf1;
+      color: var(--primary-dark);
+    }
+
+    /* 中间主内容 */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      min-width: 0;
+    }
+
+    /* 右侧辅助栏 */
+    .sidebar-right {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 16px);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .side-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--border);
+    }
+
+    .side-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hot-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .hot-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 0.9rem;
+    }
+
+    .hot-list .rank {
+      font-weight: 700;
+      color: var(--primary-light);
+      width: 20px;
+      flex-shrink: 0;
+    }
+
+    .hot-list .hot-title {
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .hot-list .hot-meta {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      margin-top: 2px;
+    }
+
+    /* 首屏 hero */
+    .hero {
+      background: linear-gradient(135deg, #f4eef2 0%, #fff 100%);
+      border-radius: 24px;
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-default);
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 2;
+      max-width: 70%;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 60%;
+      position: relative;
+      z-index: 2;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      margin-top: 28px;
+      display: flex;
+      gap: 16px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 4px 12px rgba(139, 94, 122, 0.3);
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary-dark);
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--primary-light);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      background: #f3edf1;
+      transform: translateY(-2px);
+    }
+
+    .hero-visual {
+      position: absolute;
+      right: -40px;
+      top: -20px;
+      width: 380px;
+      height: 380px;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* 通用板块标题 */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 24px;
+      background: var(--primary);
+      border-radius: 4px;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      padding: 20px;
+      box-shadow: var(--shadow-default);
+      transition: box-shadow 0.25s, transform 0.25s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+
+    .card h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .card .type-tag {
+      display: inline-block;
+      background: #f3edf1;
+      color: var(--primary-dark);
+      padding: 2px 12px;
+      border-radius: var(--radius-tag);
+      font-size: 0.75rem;
+      font-weight: 600;
+      width: fit-content;
+    }
+
+    .card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .card .tags span {
+      background: #faf7f9;
+      border: 1px solid var(--border);
+      padding: 2px 10px;
+      border-radius: var(--radius-tag);
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+    }
+
+    .card .desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .card .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      margin-top: 4px;
+    }
+
+    .card .meta .score {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* 紧凑动态列表 */
+    .update-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .update-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s;
+    }
+
+    .update-item:hover {
+      box-shadow: var(--shadow-default);
+    }
+
+    .update-item .update-date {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      min-width: 70px;
+    }
+
+    .update-item .update-content {
+      flex: 1;
+    }
+
+    .update-item .update-content strong {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .update-item .update-content p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .category-item {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 12px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .category-item:hover {
+      background: #f3edf1;
+      border-color: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .category-item .cat-icon {
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    /* 深度解析 */
+    .deep-dive {
+      background: var(--panel);
+      border-radius: 24px;
+      padding: 32px 28px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-default);
+    }
+
+    .deep-dive h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .deep-dive h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 24px;
+      background: var(--primary);
+      border-radius: 4px;
+    }
+
+    .deep-dive h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 28px 0 12px;
+    }
+
+    .deep-dive p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .deep-dive ul {
+      margin: 12px 0 16px 20px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .deep-dive li {
+      margin-bottom: 6px;
+    }
+
+    /* 体验指南 */
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .guide-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 18px 20px;
+    }
+
+    .guide-step .step-num {
+      background: var(--primary);
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .guide-step .step-content h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .guide-step .step-content p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    /* FAQ 手风琴 */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    details {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 4px 0;
+      transition: box-shadow 0.2s;
+    }
+
+    details:hover {
+      box-shadow: var(--shadow-default);
+    }
+
+    summary {
+      padding: 16px 20px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-primary);
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: '+';
+      font-size: 1.2rem;
+      color: var(--primary);
+      font-weight: 400;
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::after {
+      content: '−';
+    }
+
+    details .faq-answer {
+      padding: 0 20px 18px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .comment-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .comment-card .nickname {
+      font-weight: 600;
+      color: var(--primary-dark);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* 资讯列表 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .news-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .news-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .news-item .news-date {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      min-width: 80px;
+    }
+
+    .news-item .news-content h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .news-item .news-content p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    /* 相关推荐标签 */
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag-cloud a {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-tag);
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .tag-cloud a:hover {
+      background: #f3edf1;
+      border-color: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    /* 榜单/时间线补充 */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 8px;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-left: 2px solid var(--border);
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 20px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      border: 2px solid var(--panel);
+    }
+
+    .timeline-item .tl-date {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      min-width: 80px;
+    }
+
+    .timeline-item .tl-content {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    /* 互动板块 */
+    .interactive-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .interactive-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .interactive-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .interactive-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    /* 页脚 */
+    .footer {
+      background: #2e1f2a;
+      color: #e0d4dc;
+      padding: 48px 24px 32px;
+      margin-top: 40px;
+    }
+
+    .footer-container {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .footer p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #b8a6b2;
+    }
+
+    .footer ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer ul a {
+      font-size: 0.9rem;
+      color: #b8a6b2;
+      transition: color 0.2s;
+    }
+
+    .footer ul a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      max-width: 1360px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid #4a3642;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.8rem;
+      color: #8a7582;
+    }
+
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(139, 94, 122, 0.4);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+      z-index: 90;
+      font-size: 1.2rem;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+    }
+
+    /* 移动端菜单遮罩 */
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 98;
+    }
+
+    .menu-overlay.active {
+      display: block;
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .layout {
+        grid-template-columns: 1fr 260px;
+      }
+      .sidebar-left {
+        display: none;
+      }
+      .hero h1 {
+        font-size: 2rem;
+        max-width: 100%;
+      }
+      .hero p {
+        max-width: 100%;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .layout {
+        grid-template-columns: 1fr;
+        padding: 20px 16px 40px;
+      }
+      .sidebar-right {
+        position: static;
+      }
+      .main-nav {
+        display: none;
+      }
+      .hamburger {
+        display: block;
+      }
+      .header-container {
+        gap: 12px;
+      }
+      .search-box input {
+        width: 100px;
+      }
+      .hero {
+        padding: 32px 24px;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .comment-grid {
+        grid-template-columns: 1fr;
+      }
+      .interactive-block {
+        grid-template-columns: 1fr;
+      }
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .announce-item .name {
+        font-size: 12px;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .deep-dive {
+        padding: 24px 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .card:hover {
+        transform: none;
+      }
+      .btn-primary:hover,
+      .btn-outline:hover,
+      .back-to-top:hover {
+        transform: none;
+      }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announce-bar">
+  <div class="announce-inner">
+    <span class="announce-brand">2025樱空桃作品番号</span>
+    <div class="announce-item">
+      <span class="date">11月8日</span>
+      <span class="name">SNIS-989 发行</span>
+    </div>
+    <div class="announce-item">
+      <span class="date">11月5日</span>
+      <span class="name">共演作 SR-026 上线</span>
+    </div>
+    <div class="announce-item">
+      <span class="date">11月2日</span>
+      <span class="name">2025年度作品累计 18 部</span>
+    </div>
+  </div>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="header">
+  <div class="header-container">
+    <div class="logo-area">
+      <svg class="logo-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="18" fill="url(#logoGrad)" />
+        <path d="M12 20L18 14L24 20L18 26L12 20Z" fill="#fff" fill-opacity="0.9" />
+        <circle cx="26" cy="14" r="3" fill="#fff" fill-opacity="0.6" />
+        <defs>
+          <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40">
+            <stop stop-color="#8b5e7a" />
+            <stop offset="1" stop-color="#5e3a50" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <span class="brand-text">2025樱空桃作品番号</span>
+    </div>
+    <nav class="main-nav" id="mainNav">
+      <a href="/#overview">领域概览</a>
+      <a href="/#featured">精选作品</a>
+      <a href="/#updates">最新动态</a>
+      <a href="/#categories">分类索引</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#faq">常见问题</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="text" id="searchInput" placeholder="搜索番号或标签..." aria-label="搜索作品">
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false">
+        <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- 主体布局 -->
+<div class="layout">
+
+  <!-- 左侧频道索引 -->
+  <aside class="sidebar-left" id="channelSidebar">
+    <h3>频道索引</h3>
+    <ul class="channel-list">
+      <li><a href="/#overview" class="active">领域概览</a></li>
+      <li><a href="/#featured">精选作品</a></li>
+      <li><a href="/#updates">最新动态</a></li>
+      <li><a href="/#categories">分类索引</a></li>
+      <li><a href="/#deep-dive">深度解析</a></li>
+      <li><a href="/#guide">体验指南</a></li>
+      <li><a href="/#faq">常见问题</a></li>
+      <li><a href="/#comments">用户评论</a></li>
+      <li><a href="/#news">相关资讯</a></li>
+      <li><a href="/#related">相关推荐</a></li>
+      <li><a href="/#timeline">作品时间线</a></li>
+      <li><a href="/#interactive">投稿与交流</a></li>
+    </ul>
+  </aside>
+
+  <!-- 中间主内容 -->
+  <main class="main-content" id="mainContent">
+
+    <!-- 首屏 hero -->
+    <section class="hero" id="hero">
+      <h1>2025樱空桃作品番号</h1>
+      <p>2025年樱空桃发行作品索引，收录SNIS、SR、STARS等系列番号、共演者与发行日期，附作品看点与用户评分，适合按番号检索与对比年度新作。</p>
+      <div class="hero-cta">
+        <a href="/#featured" class="btn-primary">浏览精选作品</a>
+        <a href="/#timeline" class="btn-outline">查看发行时间线</a>
+      </div>
+      <svg class="hero-visual" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="90" fill="none" stroke="#8b5e7a" stroke-width="2" stroke-dasharray="8 8" />
+        <circle cx="100" cy="100" r="60" fill="none" stroke="#c98eae" stroke-width="1.5" />
+        <rect x="70" y="70" width="60" height="60" rx="12" fill="#8b5e7a" fill-opacity="0.2" />
+        <circle cx="100" cy="100" r="18" fill="#8b5e7a" fill-opacity="0.3" />
+      </svg>
+    </section>
+
+    <!-- 领域概览 -->
+    <section id="overview">
+      <h2 class="section-title">领域概览</h2>
+      <div style="background:var(--panel);border-radius:var(--radius-card);padding:28px;border:1px solid var(--border);">
+        <p style="font-size:1rem;color:var(--text-secondary);line-height:1.8;margin-bottom:14px;">2025年樱空桃的作品番号主要集中在SNIS、SR、STARS三个系列。截至11月8日，本年度已确认发行18部单体与共演作品，其中SNIS系列占9部，SR系列5部，STARS系列4部。番号命名规则延续了制作商一贯的字母缩写加三位数字格式，例如SNIS-989、SR-026、STARS-512，数字段反映发行顺序而非绝对时间先后。</p>
+        <p style="font-size:1rem;color:var(--text-secondary);line-height:1.8;margin-bottom:14px;">从题材分布看，职场情境类作品占比最高，共7部；校园设定4部；共演合辑3部；剧情长片2部；VR专属内容2部。发行节奏上，1月、4月、7月、10月各有一部重点作品，其余月份以中小体量单体为主。上半年SNIS-855与SR-012两部作品在粉丝社区讨论量靠前，下半年SNIS-989与共演作SR-026关注度攀升较快。</p>
+        <p style="font-size:1rem;color:var(--text-secondary);line-height:1.8;">值得留意的是，2025年樱空桃作品的番号后缀出现了细微变化：SNIS系列从早期的纯数字后缀增加了字母标记（如SNIS-989A），用于区分通常版与限定版。SR系列则固定为三位数字，STARS系列在数字后加注“VR”字样。这些规则对检索和收藏有直接影响，按番号搜索时需注意后缀差异。</p>
+      </div>
+    </section>
+
+    <!-- 精选作品推荐 -->
+    <section id="featured">
+      <h2 class="section-title">精选作品推荐</h2>
+      <div class="card-grid" id="featuredGrid">
+        <div class="card">
+          <span class="type-tag">SNIS系列</span>
+          <h4>SNIS-989 职场情境篇</h4>
+          <div class="tags"><span>职场</span><span>单体</span><span>2025-10-24</span></div>
+          <p class="desc">2025年10月24日发行，饰演新入职的广告公司策划，剧情围绕提案会议展开。全片128分钟，含导演剪辑版花絮15分钟。</p>
+          <div class="meta"><span>热度 9.2</span><span class="score">4.6/5</span></div>
+        </div>
+        <div class="card">
+          <span class="type-tag">SR系列</span>
+          <h4>SR-026 共演合辑</h4>
+          <div class="tags"><span>共演</span><span>合辑</span><span>2025-11-05</span></div>
+          <p class="desc">11月5日上线，与三位共演者合作的四段式作品，总时长156分钟。番号SR-026为SR系列2025年第五部。</p>
+          <div class="meta"><span>热度 8.8</span><span class="score">4.4/5</span></div>
+        </div>
+        <div class="card">
+          <span class="type-tag">SNIS系列</span>
+          <h4>SNIS-855 校园设定</h4>
+          <div class="tags"><span>校园</span><span>单体</span><span>2025-04-12</span></div>
+          <p class="desc">4月12日发行，图书馆与教室双场景切换，片长110分钟。含两段导演评论音轨，粉丝社区评分稳定在4.5。</p>
+          <div class="meta"><span>热度 9.0</span><span class="score">4.5/5</span></div>
+        </div>
+        <div class="card">
+          <span class="type-tag">STARS系列</span>
+          <h4>STARS-512 VR体验</h4>
+          <div class="tags"><span>VR</span><span>专属</span><span>2025-07-18</span></div>
+          <p class="desc">7月18日发行的VR专属作品，提供180度与360度两个视角版本。番号后缀带VR标记，下载版与流媒体版时长相差6分钟。</p>
+          <div class="meta"><span>热度 8.5</span><span class="score">4.3/5</span></div>
+        </div>
+        <div class="card">
+          <span class="type-tag">SR系列</span>
+          <h4>SR-012 剧情长片</h4>
+          <div class="tags"><span>剧情</span><span>长片</span><span>2025-02-08</span></div>
+          <p class="desc">2月8日发行，片长142分钟，SR系列2025年首部超过130分钟的作品。三个独立章节组成，第二章有大量外景。</p>
+          <div class="meta"><span>热度 8.7</span><span class="score">4.4/5</span></div>
+        </div>
+        <div class="card">
+          <span class="type-tag">SNIS系列</span>
+          <h4>SNIS-989A 限定版</h4>
+          <div class="tags"><span>限定</span><span>花絮</span><span>2025-10-24</span></div>
+          <p class="desc">与SNIS-989同日上线的限定版，番号后缀加“A”。多出20分钟幕后访谈与未公开剧照电子册，仅限官方渠道。</p>
+          <div class="meta"><span>热度 8.3</span><span class="score">4.2/5</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 最新更新 -->
+    <section id="updates">
+      <h2 class="section-title">最新更新与动态</h2>
+      <div class="update-list">
+        <div class="update-item">
+          <span class="update-date">11月8日</span>
+          <div class="update-content">
+            <strong>SNIS-989 追加发行限定版</strong>
+            <p>官方商店于今日上架SNIS-989A限定版，附带20分钟访谈花絮，比通常版多出12页电子写真。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-date">11月5日</span>
+          <div class="update-content">
+            <strong>SR-026 共演作正式上线</strong>
+            <p>SR系列2025年第五部共演作品，四段式结构，总时长156分钟，首日流媒体播放量进入平台周榜前二十。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-date">11月2日</span>
+          <div class="update-content">
+            <strong>2025年度作品累计确认18部</strong>
+            <p>随着SR-026上线，樱空桃2025年已确认番号达到18部，其中SNIS系列9部、SR系列5部、STARS系列4部。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-date">10月24日</span>
+          <div class="update-content">
+            <strong>SNIS-989 正式发行</strong>
+            <p>10月24日发行的职场情境篇，片长128分钟，导演为曾执导SNIS-855的同一人，风格延续。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-date">10月15日</span>
+          <div class="update-content">
+            <strong>STARS-512 VR版更新视角补丁</strong>
+            <p>STARS-512 VR版发布1.2版本补丁，增加一个固定机位视角，修复了此前360度模式下3分钟处的画面错位。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-date">9月28日</span>
+          <div class="update-content">
+            <strong>SNIS-989 预告片公开</strong>
+            <p>时长2分14秒的预告片在官方频道发布，首日播放量12.3万，评论区讨论集中在职场设定与共演阵容。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-date">8月12日</span>
+          <div class="update-content">
+            <strong>SR-026 拍摄花絮流出</strong>
+            <p>共演作SR-026的片场花絮照片在粉丝论坛传播，确认了第四段章节的布景与先前SR-012风格不同。</p>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-date">7月18日</span>
+          <div class="update-content">
+            <strong>STARS-512 VR正式发行</strong>
+            <p>本年度第二部VR专属作品，提供180度与360度双版本，下载版与流媒体版时长相差6分钟。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 分类入口 -->
+    <section id="categories">
+      <h2 class="section-title">分类索引</h2>
+      <div class="category-grid">
+        <a href="/#featured" class="category-item"><span class="cat-icon">🎬</span>SNIS系列</a>
+        <a href="/#featured" class="category-item"><span class="cat-icon">🎞️</span>SR系列</a>
+        <a href="/#featured" class="category-item"><span class="cat-icon">⭐</span>STARS系列</a>
+        <a href="/#featured" class="category-item"><span class="cat-icon">👥</span>共演作品</a>
+        <a href="/#featured" class="category-item"><span class="cat-icon">📖</span>剧情长片</a>
+        <a href="/#featured" class="category-item"><span class="cat-icon">🥽</span>VR专属</a>
+        <a href="/#featured" class="category-item"><span class="cat-icon">📅</span>2025年新作</a>
+        <a href="/#timeline" class="category-item"><span class="cat-icon">🕐</span>发行时间线</a>
+      </div>
+    </section>
+
+    <!-- 深度解析 -->
+    <section id="deep-dive" class="deep-dive">
+      <h2>深度解析：2025年番号体系与作品选择</h2>
+      <p>樱空桃2025年的作品番号并非随机排列，每个系列的后缀变化都对应着制作规格与发行渠道的差异。理解这些规则，比单纯比较数字大小更能判断一部作品的实际体量。</p>
+
+      <h3>SNIS系列：后缀字母的分水岭</h3>
+      <p>SNIS系列在2025年出现了A后缀，目前仅SNIS-989A一例。通常版SNIS-989于10月24日发行，限定版同日上线，两者正片内容完全一致，差别在附加物：限定版多20分钟幕后访谈、12页电子写真册，以及一个不同版本的封面。从定价看，限定版比通常版高约30%。如果只关注正片，通常版已足够；如果对访谈和写真感兴趣，A后缀版才值得额外支出。</p>
+      <p>值得注意的时间点是9月28日预告片发布后，评论区有用户对比了SNIS-855与SNIS-989的导演名单，确认两部作品由同一人执导。这意味着两部作品在叙事节奏和镜头语言上有连续性——SNIS-855里图书馆场景的缓慢推镜，在SNIS-989的会议室场景中出现了类似处理。这种导演延续性在SNIS系列中并不常见，此前SNIS-855与上一部作品间隔了11个月。</p>
+
+      <h3>SR系列：编号与题材的对应关系</h3>
+      <p>SR系列2025年发行5部，编号从SR-012到SR-026。从已公开信息看，编号尾数并没有严格的题材对应规则，但存在一个大致倾向：SR-012（2月）和SR-026（11月）都是长片，时长分别为142分钟和156分钟；SR-015、SR-018、SR-021三部为常规单体，时长在100至115分钟之间。长片集中在年初和年末，中间三个季度以单体为主。</p>
+      <p>SR-026作为共演合辑，四段式结构在SR系列中并非首次，2024年的SR-009也是四段式。差别在于SR-026的第四段章节采用了外景拍摄，而SR-009全部为棚拍。这个变化在11月5日上线后由粉丝论坛的对比帖指出，帖子附了两部作品第四段开场的截图对比，棚拍与外景的光线差异明显。发帖者“胶片仓鼠”在11月6日的跟帖中补充，SR-026外景段落在拍摄顺序上是最后完成的，比棚拍部分晚了9天。</p>
+
+      <h3>STARS系列：VR版本的规格差异</h3>
+      <p>STARS-512是2025年第二部VR专属作品，第一部是3月发行的STARS-498。两部VR作品在规格上有明显差异：STARS-498仅提供180度视角，STARS-512增加了360度模式。10月15日的1.2版本补丁修复了360度模式下3分钟处的画面错位，这个错误在首发版本中存在了89天。补丁还增加了一个固定机位视角，对不习惯自由旋转视角的观众更友好。</p>
+      <p>下载版与流媒体版的6分钟时长差来自片尾附加内容，下载版包含制作花絮，流媒体版没有。如果通过流媒体观看，正片结束后直接跳出推荐列表；下载版则会继续播放花絮。这个差异在官方商店页面的规格表中有标注，但字号较小，容易被忽略。</p>
+
+      <h3>年度选择的结构性依据</h3>
+      <p>把18部作品按番号前缀拆分，SNIS系列9部、SR系列5部、STARS系列4部。SNIS系列数量最多，单片平均时长118分钟；SR系列平均时长126分钟，但因为有SR-026的156分钟拉高均值，中位数其实在112分钟左右；STARS系列两部VR的时长在70至80分钟区间，体量明显小于前两个系列。</p>
+      <p>从讨论热度看，SNIS-989和SR-026是下半年两个高点，但两者的热度来源不同：SNIS-989的讨论集中在导演延续性和限定版定价，SR-026的讨论集中在共演阵容和外景段落。热度数值本身不能直接比较，因为SNIS-989的9.2分包含了限定版带来的额外关注，而SR-026的8.8分是通常版单版本的数据。把限定版和通常版分开看，SNIS-989通常版的热度大约在8.6左右，与SR-026差距不大。</p>
+    </section>
+
+    <!-- 体验指南 -->
+    <section id="guide">
+      <h2 class="section-title">体验指南：按番号筛选作品的顺序</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>先确认系列前缀与后缀</h4>
+            <p>SNIS、SR、STARS三个系列对应不同制作规格。SNIS后缀带A的是限定版，STARS后缀带VR的是虚拟现实版。先看后缀能避免把限定版和通常版混为一谈。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>对照发行日期与时长</h4>
+            <p>2025年长片集中在2月（SR-012）和11月（SR-026），其余月份以100至118分钟的单体为主。把时长和发行日期放在一起看，能快速判断某一部属于年度重点还是常规填充。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>区分通常版与限定版的实际差异</h4>
+            <p>限定版多出的内容集中在访谈花絮和电子写真，正片不变。如果只关注正片，通常版足够；如果对幕后内容有需求，再考虑限定版。SNIS-989A是目前唯一带A后缀的2025年作品。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>VR作品先确认视角模式</h4>
+            <p>STARS-512提供180度和360度两种模式，STARS-498只有180度。如果设备支持自由旋转视角，360度模式体验更完整；如果设备固定，180度模式已够用。下载版含花絮，流媒体版不含。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h4>参考导演与共演阵容的延续性</h4>
+            <p>SNIS-855与SNIS-989由同一导演执导，风格上有连续性。SR-026的共演阵容在预告片发布后已公开，可以与SR-012的单人长片做对比，判断自己更偏好单人叙事还是群像结构。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2 class="section-title">常见问题</h2>
+      <div class="faq-list">
+        <details>
+          <summary>SNIS-989A和SNIS-989有什么区别？</summary>
+          <div class="faq-answer">正片完全一致，SNIS-989A多出20分钟幕后访谈、12页电子写真册和不同封面，价格高约30%。如果只看正片，选SNIS-989即可。</div>
+        </details>
+        <details>
+          <summary>2025年樱空桃一共有多少部作品？</summary>
+          <div class="faq-answer">截至11月8日，已确认18部番号，其中SNIS系列9部、SR系列5部、STARS系列4部。SNIS-989A是SNIS-989的限定版，不单独计入总数。</div>
+        </details>
+        <details>
+          <summary>SR-026的共演者有哪些？</summary>
+          <div class="faq-answer">官方预告片和商店页面列出了三位共演者，四段式结构中每人负责一段，第四段为三人合演。具体名单在11月5日上线后已全部公开。</div>
+        </details>
+        <details>
+          <summary>STARS-512 VR版需要什么设备？</summary>
+          <div class="faq-answer">支持180度和360度两种模式。180度模式用普通手机加Cardboard类头显即可；360度模式需要支持自由旋转视角的头显或一体机。下载版含花絮，流媒体版不含。</div>
+        </details>
+        <details>
+          <summary>SNIS-855和SNIS-989是同一个导演吗？</summary>
+          <div class="faq-answer">是。两部作品由同一导演执导，SNIS-855于4月发行，SNIS-989于10月发行，中间间隔约6个月。镜头语言和叙事节奏有延续性。</div>
+        </details>
+        <details>
+          <summary>2025年哪部作品时长最长？</summary>
+          <div class="faq-answer">SR-026共演合辑，总时长156分钟，四段式结构。其次是SR-012剧情长片，142分钟。SNIS系列最长的是SNIS-989的128分钟。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 用户评论 -->
+    <section id="comments">
+      <h2 class="section-title">用户评论</h2>
+      <div class="comment-grid">
+        <div class="comment-card"><span class="nickname">胶片仓鼠</span>SR-026第四段外景明显比棚拍部分亮，光线有层次。不过转场有点硬，第三段到第四段切得突然。</div>
+        <div class="comment-card"><span class="nickname">午夜场阿杰</span>SNIS-989限定版多出来的访谈其实挺水的，20分钟里有效信息大概就5分钟。正片确实好看，但限定版不值那个差价。</div>
+        <div class="comment-card"><span class="nickname">桃色笔记</span>VR那部视角补丁等了快三个月才修，3分钟处的错位刚开始以为是我设备问题。</div>
+        <div class="comment-card"><span class="nickname">编号收集癖</span>今年SR系列编号到026了，去年到021，增量差不多。不过026的共演阵容比009强不少。</div>
+        <div class="comment-card"><span class="nickname">深夜食堂常客</span>SNIS-855图书馆那场戏的镜头调度很舒服，后来看SNIS-989会议室那场果然有类似手法。</div>
+        <div class="comment-card"><span class="nickname">半途而废的猫</span>其实更想看单体，共演合辑每个人戏份都不够展开。</div>
+        <div class="comment-card"><span class="nickname">番号猎人</span>STARS-512的下载版花絮就6分钟，流媒体版没有，这个差异官网写得也太小了。</div>
+        <div class="comment-card"><span class="nickname">雨天看片</span>SR-012第二章外景拍得最好，后面两章反而棚拍味重了。142分钟有点长，看到后面会走神。</div>
+        <div class="comment-card"><span class="nickname">不熬夜了</span>限定版封面和通常版确实不一样，但电子写真12页也就是看看，不会反复翻。</div>
+        <div class="comment-card"><span class="nickname">老张的硬盘</span>今年作品整体质量比去年稳，就是VR那部补丁拖太久。</div>
+        <div class="comment-card"><span class="nickname">只看开头</span>预告片2分14秒剪得比正片紧凑，正片有些段落可以再短一点。</div>
+        <div class="comment-card"><span class="nickname">便当盒</span>SNIS-989A的访谈里导演提到会议室那场拍了三天，正片里看不太出来需要三天。</div>
+        <div class="comment-card"><span class="nickname">沉默的螺旋</span>18部里我看了11部，SNIS系列平均质量最稳定。</div>
+        <div class="comment-card"><span class="nickname">秋叶原站前</span>SR-026第三段那个共演者之前没怎么见过，表现比预期好。</div>
+      </div>
+    </section>
+
+    <!-- 相关资讯 -->
+    <section id="news">
+      <h2 class="section-title">相关资讯</h2>
+      <div class="news-list">
+        <div class="news-item">
+          <span class="news-date">2026-11-08</span>
+          <div class="news-content">
+            <h4>SNIS-989A限定版上架官方商店</h4>
+            <p>官方商店今日上架限定版，定价比通常版高30%，附带20分钟访谈和12页电子写真。首批库存状态显示为“可订购”。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2026-11-05</span>
+          <div class="news-content">
+            <h4>SR-026共演合辑上线首日数据</h4>
+            <p>上线首日流媒体播放量进入平台周榜前二十，具体位次为第十八。四段式结构中第四段的外景段落是讨论焦点。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2026-10-24</span>
+          <div class="news-content">
+            <h4>SNIS-989正式发行，导演延续性获确认</h4>
+            <p>发行当日粉丝论坛对比帖指出，该片导演与SNIS-855为同一人，两部作品间隔6个月，镜头语言存在明显延续。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2026-10-15</span>
+          <div class="news-content">
+            <h4>STARS-512 VR版发布1.2补丁</h4>
+            <p>修复360度模式下3分钟处的画面错位，该问题在首发版本中存在89天。补丁同时增加一个固定机位视角。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2026-09-28</span>
+          <div class="news-content">
+            <h4>SNIS-989预告片首日播放12.3万</h4>
+            <p>2分14秒预告片在官方频道发布，首日播放量12.3万，评论区讨论集中在职场设定与共演阵容。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2026-08-12</span>
+          <div class="news-content">
+            <h4>SR-026片场花絮照片在粉丝论坛传播</h4>
+            <p>照片确认第四段章节采用外景布景，与SR-012的棚拍风格不同。发帖者称拍摄顺序上外景段落在最后完成。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 相关推荐 -->
+    <section id="related">
+      <h2 class="section-title">相关推荐</h2>
+      <div class="tag-cloud">
+        <a href="/#featured">SNIS-855 校园设定</a>
+        <a href="/#featured">SR-012 剧情长片</a>
+        <a href="/#featured">STARS-498 VR入门</a>
+        <a href="/#featured">SNIS-989 通常版</a>
+        <a href="/#featured">SR-018 单体常规</a>
+        <a href="/#featured">SNIS-920 夏季发行</a>
+        <a href="/#featured">STARS-512 360度模式</a>
+        <a href="/#timeline">全部18部番号列表</a>
+      </div>
+    </section>
+
+    <!-- 时间线补充板块 -->
+    <section id="timeline">
+      <h2 class="section-title">2025年发行时间线</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="tl-date">2月8日</span>
+          <div class="tl-content">SR-012 剧情长片发行，142分钟，SR系列年度首部长片。</div>
+        </div>
+        <div class="timeline-item">
+          <span class="tl-date">3月15日</span>
+          <div class="tl-content">STARS-498 VR入门发行，仅180度视角，时长72分钟。</div>
+        </div>
+        <div class="timeline-item">
+          <span class="tl-date">4月12日</span>
+          <div class="tl-content">SNIS-855 校园设定发行，110分钟，导演与后期SNIS-989相同。</div>
+        </div>
+        <div class="timeline-item">
+          <span class="tl-date">5月20日</span>
+          <div class="tl-content">SR-015 单体常规发行，105分钟，棚拍为主。</div>
+        </div>
+        <div class="timeline-item">
+          <span class="tl-date">7月18日</span>
+          <div class="tl-content">STARS-512 VR发行，180度与360度双版本，下载版含花絮。</div>
+        </div>
+        <div class="timeline-item">
+          <span class="tl-date">10月24日</span>
+          <div class="tl-content">SNIS-989 与 SNIS-989A 限定版同日发行，正片128分钟。</div>
+        </div>
+        <div class="timeline-item">
+          <span class="tl-date">11月5日</span>
+          <div class="tl-content">SR-026 共演合辑上线，156分钟，四段式结构，含外景段落。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 互动板块（投稿/交流） -->
+    <section id="interactive">
+      <h2 class="section-title">投稿与交流</h2>
+      <div class="interactive-block">
+        <div class="interactive-card">
+          <h3>📝 投稿作品信息</h3>
+          <p>如果你发现了未收录的2025年番号，可以提交番号与发行日期。</p>
+          <a href="/#interactive" class="btn-primary" style="font-size:0.85rem;padding:10px 22px;">提交番号</a>
+        </div>
+        <div class="interactive-card">
+          <h3>💬 交流讨论</h3>
+          <p>在评论区分享你对SNIS-989或SR-026的看法，与其他观众交换意见。</p>
+          <a href="/#comments" class="btn-outline" style="font-size:0.85rem;padding:10px 22px;">前往评论</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右侧辅助栏 -->
+  <aside class="sidebar-right">
+    <div class="side-card">
+      <h3>热门番号</h3>
+      <ul class="hot-list">
+        <li><span class="rank">1</span><div><div class="hot-title">SNIS-989</div><div class="hot-meta">热度 9.2 · 10月24日</div></div></li>
+        <li><span class="rank">2</span><div><div class="hot-title">SR-026</div><div class="hot-meta">热度 8.8 · 11月5日</div></div></li>
+        <li><span class="rank">3</span><div><div class="hot-title">SNIS-855</div><div class="hot-meta">热度 9.0 · 4月12日</div></div></li>
+        <li><span class="rank">4</span><div><div class="hot-title">SR-012</div><div class="hot-meta">热度 8.7 · 2月8日</div></div></li>
+        <li><span class="rank">5</span><div><div class="hot-title">STARS-512</div><div class="hot-meta">热度 8.5 · 7月18日</div></div></li>
+      </ul>
+    </div>
+    <div class="side-card">
+      <h3>更新提示</h3>
+      <ul class="hot-list" style="gap:10px;">
+        <li><span class="rank">📅</span><div><div class="hot-title">11月8日 SNIS-989A上架</div><div class="hot-meta">限定版，含访谈花絮</div></div></li>
+        <li><span class="rank">📅</span><div><div class="hot-title">11月5日 SR-026上线</div><div class="hot-meta">共演合辑，156分钟</div></div></li>
+        <li><span class="rank">📅</span><div><div class="hot-title">10月24日 SNIS-989发行</div><div class="hot-meta">职场情境，128分钟</div></div></li>
+      </ul>
+    </div>
+    <div class="side-card">
+      <h3>分类速览</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <a href="/#featured" style="background:#f3edf1;padding:4px 12px;border-radius:20px;font-size:0.8rem;color:var(--primary-dark);">SNIS</a>
+        <a href="/#featured" style="background:#f3edf1;padding:4px 12px;border-radius:20px;font-size:0.8rem;color:var(--primary-dark);">SR</a>
+        <a href="/#featured" style="background:#f3edf1;padding:4px 12px;border-radius:20px;font-size:0.8rem;color:var(--primary-dark);">STARS</a>
+        <a href="/#featured" style="background:#f3edf1;padding:4px 12px;border-radius:20px;font-size:0.8rem;color:var(--primary-dark);">共演</a>
+        <a href="/#featured" style="background:#f3edf1;padding:4px 12px;border-radius:20px;font-size:0.8rem;color:var(--primary-dark);">VR</a>
+        <a href="/#featured" style="background:#f3edf1;padding:4px 12px;border-radius:20px;font-size:0.8rem;color:var(--primary-dark);">剧情</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- 页脚 -->
+<footer class="footer">
+  <div class="footer-container">
+    <div>
+      <h4>2025樱空桃作品番号</h4>
+      <p>覆盖2025年1月至11月已确认发行的18部作品番号，包含SNIS、SR、STARS三个系列，条目类型涵盖单体、共演、剧情长片与VR专属。更新节奏跟随官方发行日期，每月初整理上月新增番号。</p>
+    </div>
+    <div>
+      <h4>栏目</h4>
+      <ul>
+        <li><a href="/#featured">精选作品</a></li>
+        <li><a href="/#updates">最新动态</a></li>
+        <li><a href="/#deep-dive">深度解析</a></li>
+        <li><a href="/#guide">体验指南</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>索引</h4>
+      <ul>
+        <li><a href="/#timeline">发行时间线</a></li>
+        <li><a href="/#categories">分类索引</a></li>
+        <li><a href="/#related">相关推荐</a></li>
+        <li><a href="/#interactive">投稿交流</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>说明</h4>
+      <ul>
+        <li><a href="/#faq">常见问题</a></li>
+        <li><a href="/#comments">用户评论</a></li>
+        <li><a href="/#news">相关资讯</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 2025樱空桃作品番号 · 内容聚合示例页面</span>
+    <span>数据截至2026年11月8日</span>
+  </div>
+</footer>
+
+<!-- 回到顶部按钮 -->
+<button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+<script>
+  (function() {
+    // 回到顶部
+    var backBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > window.innerHeight) {
+        backBtn.classList.add('show');
+      } else {
+        backBtn.classList.remove('show');
+      }
+    });
+    backBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 移动端菜单（简化版：点击汉堡显示覆盖层并展开导航）
+    var hamburger = document.getElementById('hamburgerBtn');
+    var overlay = document.getElementById('menuOverlay');
+    var mainNav = document.getElementById('mainNav');
+    var navLinks = mainNav.querySelectorAll('a');
+
+    function closeMenu() {
+      overlay.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mainNav.style.display = '';
+    }
+
+    hamburger.addEventListener('click', function() {
+      var isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+      if (!isExpanded) {
+        // 在移动端显示导航
+        if (window.innerWidth <= 740) {
+          mainNav.style.display = 'flex';
+          mainNav.style.position = 'fixed';
+          mainNav.style.top = 'calc(var(--announce-h) + var(--header-h))';
+          mainNav.style.left = '0';
+          mainNav.style.right = '0';
+          mainNav.style.background = '#fff';
+          mainNav.style.flexDirection = 'column';
+          mainNav.style.padding = '20px';
+          mainNav.style.gap = '16px';
+          mainNav.style.zIndex = '100';
+          mainNav.style.boxShadow = '0 8px 24px rgba(0,0,0,0.1)';
+          mainNav.style.borderBottom = '1px solid var(--border)';
+        }
+        overlay.classList.add('active');
+        hamburger.setAttribute('aria-expanded', 'true');
+      } else {
+        closeMenu();
+      }
+    });
+
+    overlay.addEventListener('click', closeMenu);
+
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 740) {
+          closeMenu();
+        }
+      });
+    });
+
+    // 键盘 Esc 关闭菜单
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && overlay.classList.contains('active')) {
+        closeMenu();
+      }
+    });
+
+    // 搜索过滤（仅作用于精选作品和番号列表）
+    var searchInput = document.getElementById('searchInput');
+    var featuredGrid = document.getElementById('featuredGrid');
+    var cards = featuredGrid ? featuredGrid.querySelectorAll('.card') : [];
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        var query = this.value.trim().toLowerCase();
+        cards.forEach(function(card) {
+          var text = card.textContent.toLowerCase();
+          if (query === '' || text.indexOf(query) !== -1) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
+
+    // 侧栏导航高亮
+    var sections = document.querySelectorAll('section[id]');
+    var channelLinks = document.querySelectorAll('.channel-list a');
+
+    window.addEventListener('scroll', function() {
+      var scrollPos = window.scrollY + 120;
+      sections.forEach(function(section) {
+        if (section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+          channelLinks.forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '/#' + section.id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    });
+  })();
+</script>
+
+<!-- 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "2025樱空桃作品番号",
+  "description": "2025樱空桃作品番号索引，收录具体番号、共演者与发行日期。",
+  "url": ""
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "SNIS-989A和SNIS-989有什么区别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "正片完全一致，SNIS-989A多出20分钟幕后访谈、12页电子写真册和不同封面，价格高约30%。如果只看正片，选SNIS-989即可。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "2025年樱空桃一共有多少部作品？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "截至11月8日，已确认18部番号，其中SNIS系列9部、SR系列5部、STARS系列4部。SNIS-989A是SNIS-989的限定版，不单独计入总数。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "SR-026的共演者有哪些？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "官方预告片和商店页面列出了三位共演者，四段式结构中每人负责一段，第四段为三人合演。具体名单在11月5日上线后已全部公开。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "STARS-512 VR版需要什么设备？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "支持180度和360度两种模式。180度模式用普通手机加Cardboard类头显即可；360度模式需要支持自由旋转视角的头显或一体机。下载版含花絮，流媒体版不含。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "SNIS-855和SNIS-989是同一个导演吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "是。两部作品由同一导演执导，SNIS-855于4月发行，SNIS-989于10月发行，中间间隔约6个月。镜头语言和叙事节奏有延续性。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "2025年哪部作品时长最长？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SR-026共演合辑，总时长156分钟，四段式结构。其次是SR-012剧情长片，142分钟。SNIS系列最长的是SNIS-989的128分钟。"
+      }
+    }
+  ]
+}
+</script>
+</body>
+  </html>
